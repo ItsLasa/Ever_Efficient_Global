@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "../button";
 import {
   NavigationMenu,
@@ -16,9 +16,30 @@ const navigationLinks = [
 
 export const HeaderSection = (): JSX.Element => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [showHeader, setShowHeader] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setShowHeader(false); // scrolling down
+      } else {
+        setShowHeader(true); // scrolling up
+      }
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 shadow-md bg-black/80 backdrop-blur-md">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 shadow-md bg-black/80 backdrop-blur-md transition-transform duration-500 ${
+        showHeader ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
       <div className="container px-4 py-4 mx-auto">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -76,7 +97,7 @@ export const HeaderSection = (): JSX.Element => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="p-4 mt-4 space-y-4 transition-all duration-300 rounded-lg md:hidden ">
+          <div className="p-4 mt-4 space-y-4 transition-all duration-300 rounded-lg md:hidden">
             {navigationLinks.map((link, index) => (
               <a
                 key={index}
