@@ -45,7 +45,7 @@ export const DividerSection = (): JSX.Element => {
                   <h3 className="mb-3 text-3xl font-semibold text-everefficientlkmirage">
                     {title}
                   </h3>
-                  <p className="text-lg leading-relaxed text-everefficientlkslate-gray max-w-prose">
+                  <p className="text-lg leading-relaxed text-zinc-600 text-everefficientlkslate-gray max-w-prose">
                     {content}
                   </p>
                 </div>
