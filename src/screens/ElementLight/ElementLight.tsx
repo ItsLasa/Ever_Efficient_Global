@@ -1,5 +1,7 @@
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+
 import {
   Accordion,
   AccordionContent,
@@ -127,6 +129,52 @@ export const ElementLight = (): JSX.Element => {
     },
   ];
 
+  //framer effect 2nd section
+  const containerVariants = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+  
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 60,
+        damping: 14,
+      },
+    },
+  };
+
+//3nd section framer animation
+  const fadeUpVariant = {
+    hidden: { opacity: 0, y: 40 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
+  
+  const staggerContainer = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+  
+
   // Thumbnail images data
   const thumbnails = [
     { url: "/thumb.png", id: "thumb-1" },
@@ -148,178 +196,189 @@ export const ElementLight = (): JSX.Element => {
 
       {/* Service Cards Section */}
       <section className="py-16 bg-gray-50">
-        <div className="container px-4 mx-auto">
-          <div className="grid max-w-6xl grid-cols-1 gap-8 mx-auto md:grid-cols-3 perspective-1000">
-            {serviceCards.map((card) => (
-              <Card
-                key={card.id}
-                className={`
-            bg-everefficientlkwhite 
-            rounded-[50px_50px_50px_0px] 
-            overflow-hidden 
-            shadow-[0px_0px_40px_5px_#0000000d] 
-            transition-transform duration-300 ease-in-out
-            hover:shadow-[0px_0px_50px_10px_#0000001a]
-            hover:-translate-y-2 hover:translate-x-1 
-            hover:scale-[1.05]
-            hover:shadow-lg
-            will-change-transform
-          `}
-                style={{ transformStyle: "preserve-3d" }}
-              >
-                <CardContent className="relative h-full p-8">
-                  <div className="absolute text-5xl font-bold leading-none text-black select-none top-4 right-6">
-                    {card.id}
-                  </div>
+  <div className="container px-4 mx-auto">
+    <motion.div
+      className="grid max-w-6xl grid-cols-1 gap-8 mx-auto md:grid-cols-3 perspective-1000"
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.2 }}
+    >
+      {serviceCards.map((card) => (
+        <motion.div key={card.id} variants={cardVariants}>
+          <Card
+            className="
+              bg-everefficientlkwhite 
+              rounded-[50px_50px_50px_0px] 
+              overflow-hidden 
+              border-[0.5px] border-zinc-400
+              shadow-[0px_0px_40px_5px_#0000000d] 
+              transition-transform duration-300 ease-in-out
+              hover:shadow-[0px_0px_50px_10px_#0000001a]
+              hover:-translate-y-2 hover:translate-x-1 
+              hover:scale-[1.05]
+              hover:shadow-lg
+              will-change-transform
+            "
+            style={{ transformStyle: "preserve-3d" }}
+          >
+            <CardContent className="relative h-full p-8">
+              <div className="absolute text-5xl font-bold leading-none text-black select-none top-4 right-6">
+                {card.id}
+              </div>
 
-                  <div className="flex items-center justify-center w-20 h-20 bg-everefficientlkblack rounded-[40px] shadow-[5px_5px_0px_#f2f3f5] mb-6">
-                    <div
-                      className="w-12 h-12 bg-center bg-cover"
-                      style={{ backgroundImage: `url(${card.iconUrl})` }}
-                    />
-                  </div>
+              <div className="flex items-center justify-center w-20 h-20 bg-everefficientlkblack rounded-[40px] shadow-[5px_5px_0px_#f2f3f5] mb-6">
+                <div
+                  className="w-12 h-12 bg-center bg-cover"
+                  style={{ backgroundImage: `url(${card.iconUrl})` }}
+                />
+              </div>
 
-                  <h3 className="mb-4 text-xl font-semibold text-everefficientlkmirage">
-                    {card.title}
-                  </h3>
+              <h3 className="mb-4 text-xl font-semibold text-everefficientlkmirage">
+                {card.title}
+              </h3>
 
-                  <p className="leading-relaxed text-zinc-700">
-                    {card.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+              <p className="leading-relaxed text-zinc-700">
+                {card.description}
+              </p>
+            </CardContent>
+          </Card>
+        </motion.div>
+      ))}
+    </motion.div>
+  </div>
+</section>
+      <Separator className="w-full h-px border-t border-[#757f95] opacity-25 " />
 
       {/* Our Story Section */}
       <section className="py-20 bg-white">
-        <div className="container px-4 mx-auto">
-          <div className="grid items-center grid-cols-1 gap-12 mx-auto lg:grid-cols-2 max-w-7xl">
-            {/* Images Column */}
-            <div className="space-y-6">
-              <div className="grid grid-cols-2 gap-6">
-                <div
-                  className="h-96 rounded-[80px_80px_0px_80px] bg-cover bg-center"
-                  style={{
-                    backgroundImage: "url(/digital-strategy-team-meeting.png)",
-                  }}
-                />
-                <div className="space-y-6">
-                  <div
-                    className="h-44 rounded-full border-2 border-dashed border-[#275ba8] bg-cover bg-center"
-                    style={{
-                      backgroundImage:
-                        "url(/presenting-digital-solutions-to-clients.png)",
-                    }}
-                  />
-                  <div
-                    className="h-44 rounded-[0px_80px_80px_80px] bg-cover bg-center"
-                    style={{
-                      backgroundImage: "url(/our-team-analyzing-data.png)",
-                    }}
-                  />
-                </div>
-              </div>
+  <div className="container px-4 mx-auto">
+    <motion.div
+      className="grid items-center grid-cols-1 gap-12 mx-auto lg:grid-cols-2 max-w-7xl"
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.2 }}
+    >
+      {/* Images Column */}
+      <motion.div variants={fadeUpVariant} className="space-y-6">
+        <div className="grid grid-cols-2 gap-6">
+          <div
+            className="h-96 rounded-[80px_80px_0px_80px] bg-cover bg-center"
+            style={{
+              backgroundImage: "url(/digital-strategy-team-meeting.png)",
+            }}
+          />
+          <div className="space-y-6">
+            <div
+              className="h-44 rounded-full border-2 border-dashed border-[#275ba8] bg-cover bg-center"
+              style={{
+                backgroundImage:
+                  "url(/presenting-digital-solutions-to-clients.png)",
+              }}
+            />
+            <div
+              className="h-44 rounded-[0px_80px_80px_80px] bg-cover bg-center"
+              style={{
+                backgroundImage: "url(/our-team-analyzing-data.png)",
+              }}
+            />
+          </div>
+        </div>
 
-              <Card className="bg-everefficientlkcerulean-blue rounded-[50px_50px_50px_0px] p-6 shadow-[0px_0px_40px_5px_#0000001a]">
-                <CardContent className="flex items-center gap-4 p-0">
-                  <div className="flex items-center justify-center w-20 h-20 rounded-full bg-everefficientlkwhite">
-                    <div
-                      className="w-12 h-12 bg-center bg-cover"
-                      style={{ backgroundImage: "url(/analytics-icon.png)" }}
-                    />
-                  </div>
-                  <div className="text-everefficientlkwhite">
-                    <div className="text-lg font-bold">9+ Years Of</div>
-                    <div className="text-lg font-bold">Digital Excellence</div>
-                  </div>
-                </CardContent>
-              </Card>
+        <Card className="bg-everefficientlkcerulean-blue rounded-[50px_50px_50px_0px] p-6 shadow-[0px_0px_40px_5px_#0000001a]">
+          <CardContent className="flex items-center gap-4 p-0">
+            <div className="flex items-center justify-center w-20 h-20 rounded-full bg-everefficientlkwhite">
+              <div
+                className="w-12 h-12 bg-center bg-cover"
+                style={{ backgroundImage: "url(/analytics-icon.png)" }}
+              />
             </div>
+            <div className="text-everefficientlkwhite">
+              <div className="text-lg font-bold">9+ Years Of</div>
+              <div className="text-lg font-bold">Digital Excellence</div>
+            </div>
+          </CardContent>
+        </Card>
+      </motion.div>
 
-            {/* Content Column */}
-            <div className="px-4 space-y-10 md:px-8 lg:px-0">
-              {/* OUR STORY Title */}
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <img
-                    className="h-5 w-7"
-                    alt="Component"
-                    src="/component-1-66.svg"
-                  />
-                  <span className="text-base font-bold tracking-widest md:text-lg text-everefficientlkcerulean-blue">
-                    OUR STORY
-                  </span>
+      {/* Content Column */}
+      <motion.div
+        variants={fadeUpVariant}
+        className="px-4 space-y-10 md:px-8 lg:px-0"
+      >
+        <div className="space-y-4">
+          <div className="flex items-center gap-3">
+            <img
+              className="h-5 w-7"
+              alt="Component"
+              src="/component-1-66.svg"
+            />
+            <span className="text-base font-bold tracking-widest md:text-lg text-everefficientlkcerulean-blue">
+              OUR STORY
+            </span>
+          </div>
+          <div className="w-24 h-0.5 bg-everefficientlkcerulean-blue"></div>
+        </div>
+
+        <div>
+          <h2 className="mb-6 text-[2.25rem] leading-tight font-bold sm:text-4xl md:text-5xl lg:text-6xl">
+            <span className="text-everefficientlkmirage">Pioneering </span>
+            <span className="text-everefficientlkcerulean-blue">
+              Digital Transformation{" "}
+            </span>
+            <span className="block text-everefficientlkmirage sm:inline">
+              Since 2015
+            </span>
+          </h2>
+
+          <p className="max-w-3xl text-base leading-relaxed md:text-lg text-zinc-600">
+            Ever Efficient emerged from a vision to bridge the gap between
+            traditional business practices and the digital revolution. What
+            began as a small consulting firm has grown into a full service
+            digital management agency, helping hundreds of businesses achieve
+            measurable success.
+          </p>
+        </div>
+
+        <div>
+          <div className="flex flex-col items-center justify-start gap-6 md:flex-row">
+            <Link to="/services">
+              <Button className="bg-[#275ba8] hover:bg-[#1e4a8c] rounded-[50px_50px_50px_0px] h-14 px-8 shadow-[0px_0px_40px_5px_#0000000d] transition-all duration-300">
+                <span className="text-everefficientlkwhite text-sm tracking-[0.14px] leading-[25.2px]">
+                  Our Services
+                </span>
+                <img
+                  className="w-4 h-4 ml-2"
+                  alt="Arrow"
+                  src="/component-1-37.svg"
+                />
+              </Button>
+            </Link>
+
+            <div className="flex items-center gap-4">
+              <div className="flex items-center justify-center w-14 h-14 bg-everefficientlkblack rounded-full shadow-[-5px_5px_0px_#116e6317]">
+                <img
+                  className="w-6 h-6"
+                  alt="Phone"
+                  src="/component-1-63.svg"
+                />
+              </div>
+              <div>
+                <div className="text-sm font-medium md:text-base text-everefficientlkcerulean-blue">
+                  Get Free Consultation
                 </div>
-                <div className="w-24 h-0.5 bg-everefficientlkcerulean-blue"></div>
-              </div>
-
-              {/* Headline + Description */}
-              <div>
-                <h2 className="mb-6 text-[2.25rem] leading-tight font-bold sm:text-4xl md:text-5xl lg:text-6xl">
-                  <span className="text-everefficientlkmirage">
-                    Pioneering{" "}
-                  </span>
-                  <span className="text-everefficientlkcerulean-blue">
-                    Digital Transformation{" "}
-                  </span>
-                  <span className="block text-everefficientlkmirage sm:inline">
-                    Since 2015
-                  </span>
-                </h2>
-
-                <p className="max-w-3xl text-base leading-relaxed md:text-lg text-zinc-600">
-                  Ever Efficient emerged from a vision to bridge the gap between
-                  traditional business practices and the digital revolution.
-                  What began as a small consulting firm has grown into a full
-                  service digital management agency, helping hundreds of
-                  businesses achieve measurable success.
-                </p>
-              </div>
-
-              {/* CTA Button + Contact */}
-              <div>
-                <div className="flex flex-col items-center justify-start gap-6 md:flex-row">
-                  {/* Button */}
-                  <Link to="/services">
-                    <Button className="bg-[#275ba8] hover:bg-[#1e4a8c] rounded-[50px_50px_50px_0px] h-14 px-8 shadow-[0px_0px_40px_5px_#0000000d] transition-all duration-300">
-                      <span className="text-everefficientlkwhite text-sm tracking-[0.14px] leading-[25.2px]">
-                        Our Services
-                      </span>
-                      <img
-                        className="w-4 h-4 ml-2"
-                        alt="Arrow"
-                        src="/component-1-37.svg"
-                      />
-                    </Button>
-                  </Link>
-
-                  {/* Phone Section */}
-                  <div className="flex items-center gap-4">
-                    <div className="flex items-center justify-center w-14 h-14 bg-everefficientlkblack rounded-full shadow-[-5px_5px_0px_#116e6317]">
-                      <img
-                        className="w-6 h-6"
-                        alt="Phone"
-                        src="/component-1-63.svg"
-                      />
-                    </div>
-                    <div>
-                      <div className="text-sm font-medium md:text-base text-everefficientlkcerulean-blue">
-                        Get Free Consultation
-                      </div>
-                      <div className="text-base font-semibold md:text-lg text-everefficientlkblack">
-                        +94 777 644 590
-                      </div>
-                    </div>
-                  </div>
+                <div className="text-base font-semibold md:text-lg text-everefficientlkblack">
+                  +94 777 644 590
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </motion.div>
+    </motion.div>
+  </div>
+</section>
       <Separator className="w-full h-px border-t border-[#757f95] opacity-25" />
       {/* Contact Section */}
       {/* <section className="px-12 py-6 bg-gray-50 ">
@@ -357,6 +416,7 @@ export const ElementLight = (): JSX.Element => {
         </div>
       </section> */}
       {/* <Separator className="w-full h-px border-t border-[#757f95] opacity-25" /> */}
+      <Separator className="w-full h-px border-t border-[#757f95] opacity-25" />
 
       <DividerSection />
 
@@ -436,6 +496,7 @@ export const ElementLight = (): JSX.Element => {
           </div>
         </div>
       </section>
+      <Separator className="w-full h-px border-t border-[#757f95] opacity-25" />
 
       {/* Thumbnails Section */}
       <section className="py-12 overflow-hidden bg-everefficientlkathens-gray">
@@ -452,6 +513,7 @@ export const ElementLight = (): JSX.Element => {
           </InfiniteSlider>
         </div>
       </section>
+      <Separator className="w-full h-px border-t border-[#757f95] opacity-25" />
 
       <MainContentSection />
       <OverlapGroupSection />
