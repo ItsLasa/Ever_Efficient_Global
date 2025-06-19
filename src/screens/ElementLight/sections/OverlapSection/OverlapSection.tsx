@@ -77,24 +77,24 @@ export const OverlapSection = (): JSX.Element => {
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
-            <div className="relative w-full h-screen flex items-center justify-center">
+            <div className="relative flex items-center justify-center w-full h-screen">
               {/* Background image + overlay */}
               <img
                 src={slide.image}
                 alt={slide.heading}
-                className="absolute inset-0 w-full h-full object-cover brightness-75"
+                className="absolute inset-0 object-cover w-full h-full brightness-75"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-everefficientlkblue-zodiac-70 to-everefficientlkblue-zodiac-70 mix-blend-multiply"></div>
 
               {/* Slide Content */}
-              <div className="relative z-10 container mx-auto px-10 py-24 text-center">
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-everefficientlkwhite leading-tight mb-8">
+              <div className="container relative z-10 px-10 py-24 mx-auto text-center">
+                <h1 className="mb-8 text-5xl font-bold leading-tight md:text-6xl lg:text-7xl text-everefficientlkwhite">
                   {slide.heading}
                 </h1>
-                <p className="text-lg md:text-xl text-zinc-300 mb-12 max-w-2xl mx-auto">
+                <p className="max-w-2xl mx-auto mb-12 text-lg md:text-xl text-zinc-300">
                   {slide.description}
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <div className="flex flex-col justify-center gap-4 sm:flex-row">
                   {slide.buttons.map((button, i) => (
                     <Button
                     key={i}
@@ -115,7 +115,7 @@ export const OverlapSection = (): JSX.Element => {
                       rel="noopener noreferrer"
                       className="flex items-center gap-3"
                     >
-                      <span className="tracking-wide transition-colors duration-300 group-hover:text-black">
+                      <span className="tracking-wide transition-colors duration-300 ">
                         {button.text}
                       </span>
                       <ArrowRightIcon className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
