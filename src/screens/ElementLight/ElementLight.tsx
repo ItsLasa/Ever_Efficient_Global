@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Accordion,
   AccordionContent,
@@ -28,8 +29,8 @@ export const ElementLight = (): JSX.Element => {
       setIsMuted(videoRef.current.muted);
     }
   };
- // FAQ data for mapping
- const faqItems = [
+  // FAQ data for mapping
+  const faqItems = [
     {
       id: "faq-1",
       question:
@@ -100,7 +101,6 @@ export const ElementLight = (): JSX.Element => {
         "We are based in Kandy, Sri Lanka and proudly serve clients globally through virtual meetings, email, and secure digital platforms.",
     },
   ];
-
 
   // Service cards data
   const serviceCards = [
@@ -240,7 +240,8 @@ export const ElementLight = (): JSX.Element => {
             </div>
 
             {/* Content Column */}
-            <div className="space-y-8">
+            <div className="px-4 space-y-10 md:px-8 lg:px-0">
+              {/* OUR STORY Title */}
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <img
@@ -248,32 +249,28 @@ export const ElementLight = (): JSX.Element => {
                     alt="Component"
                     src="/component-1-66.svg"
                   />
-                  <span className="text-lg font-bold tracking-widest text-everefficientlkcerulean-blue">
+                  <span className="text-base font-bold tracking-widest md:text-lg text-everefficientlkcerulean-blue">
                     OUR STORY
                   </span>
                 </div>
-                <div className="w-32 h-0.5 bg-everefficientlkcerulean-blue"></div>
+                <div className="w-24 h-0.5 bg-everefficientlkcerulean-blue"></div>
               </div>
 
+              {/* Headline + Description */}
               <div>
-                <h2 className="mb-6 text-5xl font-bold leading-tight lg:text-6xl">
+                <h2 className="mb-6 text-[2.25rem] leading-tight font-bold sm:text-4xl md:text-5xl lg:text-6xl">
                   <span className="text-everefficientlkmirage">
                     Pioneering{" "}
                   </span>
                   <span className="text-everefficientlkcerulean-blue">
-                    Digital
-                    <br />
-                    Transformation
+                    Digital Transformation{" "}
                   </span>
-                  <span className="text-everefficientlkmirage">
-                    {" "}
-                    Since
-                    <br />
-                    2015
+                  <span className="block text-everefficientlkmirage sm:inline">
+                    Since 2015
                   </span>
                 </h2>
 
-                <p className="text-lg leading-relaxed text-zinc-600">
+                <p className="max-w-3xl text-base leading-relaxed md:text-lg text-zinc-600">
                   Ever Efficient emerged from a vision to bridge the gap between
                   traditional business practices and the digital revolution.
                   What began as a small consulting firm has grown into a full
@@ -282,19 +279,24 @@ export const ElementLight = (): JSX.Element => {
                 </p>
               </div>
 
-              <div className="">
-                <div className="flex flex-col items-center justify-start gap-6 mx-auto md:flex-row max-w-7xl">
-                  <Button className="bg-[#275ba8] hover:bg-[#1e4a8c] rounded-[50px_50px_50px_0px] h-14 px-8 shadow-[0px_0px_40px_5px_#0000000d] transition-all duration-300">
-                    <span className="text-everefficientlkwhite text-sm tracking-[0.14px] leading-[25.2px]">
-                      Our Services
-                    </span>
-                    <img
-                      className="w-4 h-4 ml-2"
-                      alt="Arrow"
-                      src="/component-1-37.svg"
-                    />
-                  </Button>
+              {/* CTA Button + Contact */}
+              <div>
+                <div className="flex flex-col items-center justify-start gap-6 md:flex-row">
+                  {/* Button */}
+                  <Link to="/services">
+                    <Button className="bg-[#275ba8] hover:bg-[#1e4a8c] rounded-[50px_50px_50px_0px] h-14 px-8 shadow-[0px_0px_40px_5px_#0000000d] transition-all duration-300">
+                      <span className="text-everefficientlkwhite text-sm tracking-[0.14px] leading-[25.2px]">
+                        Our Services
+                      </span>
+                      <img
+                        className="w-4 h-4 ml-2"
+                        alt="Arrow"
+                        src="/component-1-37.svg"
+                      />
+                    </Button>
+                  </Link>
 
+                  {/* Phone Section */}
                   <div className="flex items-center gap-4">
                     <div className="flex items-center justify-center w-14 h-14 bg-everefficientlkblack rounded-full shadow-[-5px_5px_0px_#116e6317]">
                       <img
@@ -304,10 +306,10 @@ export const ElementLight = (): JSX.Element => {
                       />
                     </div>
                     <div>
-                      <div className="text-base font-medium text-everefficientlkcerulean-blue">
+                      <div className="text-sm font-medium md:text-base text-everefficientlkcerulean-blue">
                         Get Free Consultation
                       </div>
-                      <div className="text-lg font-semibold text-everefficientlkblack">
+                      <div className="text-base font-semibold md:text-lg text-everefficientlkblack">
                         +94 777 644 590
                       </div>
                     </div>
@@ -437,19 +439,19 @@ export const ElementLight = (): JSX.Element => {
 
       {/* Thumbnails Section */}
       <section className="py-12 overflow-hidden bg-everefficientlkathens-gray">
-      <div className="container px-4 mx-auto">
-        <InfiniteSlider speedOnHover={16} gap={24}>
-          {thumbnails.concat(thumbnails).map((thumb, index) => (
-            <img
-              key={index}
-              src={thumb.url}
-              alt={thumb.alt || `Thumbnail ${index + 1}`}
-              className="aspect-[14/9] w-[140px] rounded-xl bg-white shadow-sm object-contain"
-            />
-          ))}
-        </InfiniteSlider>
-      </div>
-    </section>
+        <div className="container px-4 mx-auto">
+          <InfiniteSlider speedOnHover={16} gap={24}>
+            {thumbnails.concat(thumbnails).map((thumb, index) => (
+              <img
+                key={index}
+                src={thumb.url}
+                alt={thumb.alt || `Thumbnail ${index + 1}`}
+                className="aspect-[14/9] w-[140px] rounded-xl bg-white shadow-sm object-contain"
+              />
+            ))}
+          </InfiniteSlider>
+        </div>
+      </section>
 
       <MainContentSection />
       <OverlapGroupSection />
@@ -478,7 +480,7 @@ export const ElementLight = (): JSX.Element => {
                   <br />
                 </span>
                 <span className="text-everefficientlkmirage">
-                 Asked Questions
+                  Asked Questions
                 </span>
               </h2>
             </div>
