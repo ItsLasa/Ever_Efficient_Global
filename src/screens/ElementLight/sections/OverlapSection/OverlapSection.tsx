@@ -21,12 +21,12 @@ const slides = [
     buttons: [
       {
         text: "Why Choose Us",
-        href: "https://everefficient.lk/index.html#why-us",
+        href: "/About",
         className: "bg-[#275ba8] hover:bg-[#1e4a8c] text-everefficientlkwhite",
       },
       {
         text: "Get Started",
-        href: "https://everefficient.lk/index.html#about",
+        href: "/Services",
         className: "bg-white hover:bg-gray-100 text-everefficientlkmirage",
       },
     ],
@@ -39,7 +39,7 @@ const slides = [
     buttons: [
       {
         text: "Our Services",
-        href: "https://everefficient.lk/index.html#services",
+        href: "/Services",
         className: "bg-[#275ba8] hover:bg-[#1e4a8c] text-everefficientlkwhite",
       },
     ],
@@ -52,7 +52,7 @@ const slides = [
     buttons: [
       {
         text: "About Us",
-        href: "https://everefficient.lk/index.html#explore",
+        href: "/About",
         className: "bg-white hover:bg-gray-100 text-everefficientlkmirage",
       },
     ],
@@ -102,7 +102,7 @@ export const OverlapSection = (): JSX.Element => {
                     className={`
                       group relative h-14 px-10 rounded-full 
                       font-medium text-base transition-all duration-300 
-                      border border-white/30
+                      
                       hover:scale-105 
                       hover:shadow-[0_0_30px_5px_rgba(255,255,255,0.15)] 
                       ${button.className}
