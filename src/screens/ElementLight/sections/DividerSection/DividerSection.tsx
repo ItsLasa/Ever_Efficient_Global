@@ -21,10 +21,10 @@ export const DividerSection = (): JSX.Element => {
 
   return (
     <section className="py-24 bg-white border-b border-gray-200">
-      <div className="container mx-auto px-6 max-w-7xl">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 items-center">
+      <div className="container px-6 mx-auto max-w-7xl">
+        <div className="grid items-center grid-cols-1 gap-16 lg:grid-cols-3">
           {/* Mission & Vision */}
-          <div className="lg:col-span-2 space-y-16">
+          <div className="space-y-16 lg:col-span-2">
             {sections.map(({ id, title, content, iconUrl }) => (
               <div key={id} className="flex items-start gap-8">
                 {/* 3D Styled Icon */}
@@ -32,7 +32,7 @@ export const DividerSection = (): JSX.Element => {
                   className="relative w-24 h-24 rounded-full bg-gradient-to-br from-everefficientlkcerulean-blue to-blue-500 shadow-[inset_2px_2px_4px_rgba(255,255,255,0.3),_6px_6px_16px_rgba(0,0,0,0.2)] flex items-center justify-center"
                 >
                   <div
-                    className="w-14 h-14 bg-center bg-contain bg-no-repeat rounded-full"
+                    className="bg-center bg-no-repeat bg-contain rounded-full w-14 h-14"
                     style={{
                       backgroundImage: `url(${iconUrl})`,
                       boxShadow: "inset 0 0 6px rgba(255, 255, 255, 0.3)",
@@ -42,10 +42,10 @@ export const DividerSection = (): JSX.Element => {
                 </div>
 
                 <div className="flex-1">
-                  <h3 className="text-3xl font-semibold text-everefficientlkmirage mb-3">
+                  <h3 className="mb-3 text-3xl font-semibold text-everefficientlkmirage">
                     {title}
                   </h3>
-                  <p className="text-everefficientlkslate-gray text-lg leading-relaxed max-w-prose">
+                  <p className="text-lg leading-relaxed text-everefficientlkslate-gray max-w-prose">
                     {content}
                   </p>
                 </div>
@@ -55,15 +55,15 @@ export const DividerSection = (): JSX.Element => {
 
           {/* Quote Card */}
           <div>
-            <Card className="bg-everefficientlkgenoa-9 rounded-3xl p-10 relative shadow-xl">
+            <Card className="relative p-10 shadow-xl bg-everefficientlkgenoa-9 rounded-3xl">
               <CardContent className="p-0">
-                <p className="text-everefficientlkmirage text-xl leading-relaxed italic font-normal tracking-wide">
+                <p className="text-xl italic font-normal leading-loose tracking-wide text-everefficientlkmirage">
                   "We don't just adapt to the digital age; we help businesses thrive
                   in it through strategic, results-driven solutions."
                 </p>
 
                 <img
-                  className="absolute w-14 h-16 bottom-6 right-6 opacity-15 select-none pointer-events-none"
+                  className="absolute h-16 pointer-events-none select-none w-14 bottom-6 right-6 opacity-15"
                   alt="Quote decoration"
                   src="/component-1-21.svg"
                 />
