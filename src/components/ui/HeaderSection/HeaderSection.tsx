@@ -18,7 +18,7 @@ export const HeaderSection = (): JSX.Element => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b bg-black/80 backdrop-blur-sm border-white/10">
+    <header className="fixed top-0 left-0 right-0 z-50 shadow-md bg-black/80 backdrop-blur-md">
       <div className="container px-4 py-4 mx-auto">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -26,7 +26,7 @@ export const HeaderSection = (): JSX.Element => {
             <div className="w-52 h-12 bg-[url(/ever-efficient-logo.png)] bg-contain bg-no-repeat bg-left" />
           </a>
 
-          {/* Desktop Nav */}
+          {/* Desktop Navigation */}
           <NavigationMenu className="hidden md:flex">
             <NavigationMenuList className="flex gap-8">
               {navigationLinks.map((link, index) => (
@@ -34,7 +34,7 @@ export const HeaderSection = (): JSX.Element => {
                   <NavigationMenuLink
                     href={link.url}
                     rel="noopener noreferrer"
-                    className="py-2 text-base font-medium text-white transition-colors duration-300 hover:text-blue-400"
+                    className="text-sm font-medium text-white transition-colors duration-300 hover:text-blue-400"
                   >
                     {link.text}
                   </NavigationMenuLink>
@@ -43,61 +43,63 @@ export const HeaderSection = (): JSX.Element => {
             </NavigationMenuList>
           </NavigationMenu>
 
-          {/* Contact Button - Desktop */}
+          {/* Contact Button for Desktop */}
           <div className="hidden md:block">
             <Button
               asChild
-              className="bg-[#275ba8] hover:bg-[#1e4a8c] rounded-[50px_50px_50px_0px] shadow-md h-12 px-6 transition-all duration-300"
+              className="bg-[#275ba8] hover:bg-[#1e4a8c] rounded-[50px_50px_50px_0px] shadow-lg h-12 px-6 transition-all duration-300"
             >
               <a
                 href="/Contact"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm font-medium tracking-wide text-white"
+                className="flex items-center gap-2 text-sm font-medium text-white"
               >
                 <img
                   className="w-4 h-4"
                   alt="Contact Icon"
                   src="/component-1-38.svg"
                 />
-                <span>CONTACT US</span>
+                <span>Contact Us</span>
               </a>
             </Button>
           </div>
 
-          {/* Mobile Hamburger */}
+          {/* Mobile Menu Toggle Button */}
           <button
-            className="text-white md:hidden"
+            className="z-50 text-white md:hidden focus:outline-none"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
 
-        {/* Mobile Nav */}
-        {isMobileMenuOpen && (
-          <div className="mt-4 space-y-4 md:hidden">
-            <div className="flex flex-col items-start gap-4">
-              {navigationLinks.map((link, index) => (
-                <a
-                  key={index}
-                  href={link.url}
-                  className="block w-full font-medium text-white transition hover:text-blue-400"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.text}
-                </a>
-              ))}
-              <Button
-                asChild
-                className="w-full bg-[#275ba8] hover:bg-[#1e4a8c] rounded-md h-11 text-sm font-medium text-white"
+        {/* Mobile Navigation Menu */}
+        <div
+          className={`md:hidden mt-4 transition-all duration-300 ${
+            isMobileMenuOpen ? "block" : "hidden"
+          }`}
+        >
+          <div className="flex flex-col gap-4 p-4 rounded-lg bg-black/90">
+            {navigationLinks.map((link, index) => (
+              <a
+                key={index}
+                href={link.url}
+                className="text-base font-medium text-white hover:text-blue-400"
+                onClick={() => setIsMobileMenuOpen(false)}
               >
-                <a href="/Contact" onClick={() => setIsMobileMenuOpen(false)}>
-                  Contact Us
-                </a>
-              </Button>
-            </div>
+                {link.text}
+              </a>
+            ))}
+            <Button
+              asChild
+              className="bg-[#275ba8] hover:bg-[#1e4a8c] rounded-md text-sm text-white h-11"
+            >
+              <a href="/Contact" onClick={() => setIsMobileMenuOpen(false)}>
+                Contact Us
+              </a>
+            </Button>
           </div>
-        )}
+        </div>
       </div>
     </header>
   );
