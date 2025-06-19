@@ -34,7 +34,7 @@ export const HeaderSection = (): JSX.Element => {
                   <NavigationMenuLink
                     href={link.url}
                     rel="noopener noreferrer"
-                    className="text-sm font-medium text-white transition-colors duration-300 hover:text-blue-400"
+                    className="font-medium text-white transition-colors duration-300 text-2sm hover:text-blue-400"
                   >
                     {link.text}
                   </NavigationMenuLink>
