@@ -11,11 +11,11 @@ import { Button } from "../button";
 
 // Data for quick links
 const quickLinks = [
-  { text: "Home", url: "https://everefficient.lk/index.html" },
-  { text: "About Us", url: "https://everefficient.lk/about.html" },
-  { text: "Services", url: "https://everefficient.lk/services.html" },
-  { text: "Contact Us", url: "https://everefficient.lk/contact.html" },
-  { text: "Privacy Policy", url: "https://everefficient.lk/privacy.html" },
+  { text: "Home", url: "/" },
+  { text: "Services", url: "/Services" },
+  { text: "About Us", url: "/About" },
+  { text: "Contact Us", url: "/Contact" },
+
 ];
 
 // Data for contact information
@@ -39,9 +39,9 @@ const contactInfo = [
 
 export const FooterSection = (): JSX.Element => {
   return (
-    <footer className="w-full bg-everefficientlkblack py-6 px-10">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer className="w-full px-10 py-6 bg-everefficientlkblack">
+      <div className="container px-4 mx-auto">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {/* Company Info Section */}
           <div className="flex flex-col space-y-4">
             <div className="w-[220px] h-[51.56px] bg-[url(/ever-efficient-logo-1.png)] bg-cover bg-[50%_50%]" />
@@ -79,7 +79,7 @@ export const FooterSection = (): JSX.Element => {
           {/* Quick Links Section */}
           <div className="flex flex-col">
             <div className="relative pb-5">
-              <h3 className="font-inter text-everefficientlkwhite text-[19.4px] leading-[21px]">
+              <h3 className="font-inter text-everefficientlkwhite font-semibold text-[19.4px] leading-[21px]">
                 Quick Links
               </h3>
               <div className="w-[90px] h-[3px] mt-4 bg-everefficientlkwhite-20" />
@@ -93,7 +93,6 @@ export const FooterSection = (): JSX.Element => {
                   <a
                     href={link.url}
                     rel="noopener noreferrer"
-                    target="_blank"
                     className="ml-2 font-inter text-everefficientlkwhite text-base leading-[28.8px]"
                   >
                     {link.text}
@@ -106,7 +105,7 @@ export const FooterSection = (): JSX.Element => {
           {/* Newsletter Section */}
           <div className="flex flex-col">
             <div className="relative pb-5">
-              <h3 className="font-everefficient-lk-semantic-heading-4 text-everefficientlkwhite text-[length:var(--everefficient-lk-semantic-heading-4-font-size)] leading-[var(--everefficient-lk-semantic-heading-4-line-height)]">
+              <h3 className="font-everefficient-lk-semantic-heading-4  text-everefficientlkwhite text-[length:var(--everefficient-lk-semantic-heading-4-font-size)] leading-[var(--everefficient-lk-semantic-heading-4-line-height)]">
                 Newsletter
               </h3>
               <div className="w-[90px] h-[3px] mt-4 bg-everefficientlkwhite-20" />
@@ -120,7 +119,7 @@ export const FooterSection = (): JSX.Element => {
             </p>
 
             <div className="flex flex-col gap-5 mt-4">
-              <Card className="bg-everefficientlkwhite rounded-xl overflow-hidden">
+              <Card className="overflow-hidden bg-everefficientlkwhite rounded-xl">
                 <CardContent className="p-5">
                   <div className="font-everefficient-lk-semantic-input text-everefficientlkshark-75 text-[length:var(--everefficient-lk-semantic-input-font-size)]">
                     Your Email
@@ -139,17 +138,10 @@ export const FooterSection = (): JSX.Element => {
         {/* Footer Bottom Section */}
         <div className="flex items-center mt-16 pt-[11px] pb-2.5 border-t border-[#ffffff14]">
           <div className="flex items-center">
-            <a
-              className="font-everefficient-lk-inter-regular  text-everefficientlkcerulean-blue text-[length:var(--everefficient-lk-inter-regular-font-size)] leading-[28.8px]"
-              href="https://everefficient.lk/privacy.html"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Privacy Policy
-            </a>
+            
             <span className="font-everefficient-lk-inter-regular text-everefficientlkalice-blue text-[length:var(--everefficient-lk-inter-regular-font-size)] leading-[28.8px] px-1">
-              {" "}
-              | Powered By EVER EFFICIANT Business Management (Pvt) Ltd
+              
+            Privacy Policy | Powered By EVER EFFICIANT Business Management (Pvt) Ltd
             </span>
           </div>
 
