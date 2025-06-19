@@ -36,80 +36,90 @@ export const ContactSection = (): JSX.Element => {
         </div>
       </section>
 
-      <div className="grid md:grid-cols-3 gap-6 px-6 py-8">
+      <div className="grid gap-6 px-6 py-8 md:grid-cols-3">
         {/* Card 1 */}
-        <div className="bg-white shadow-md text-center py-6 rounded-xl transform transition duration-500 hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-blue-300 animate-fade-in-up group">
-          <div className="text-4xl w-14 h-14 mx-auto flex items-center justify-center bg-gradient-to-br from-blue-100 to-blue-200 rounded-full group-hover:animate-pulse">
+        <div className="py-6 text-center transition duration-500 transform bg-white shadow-md rounded-xl hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-blue-300 animate-fade-in-up group">
+          <div className="flex items-center justify-center mx-auto text-4xl rounded-full w-14 h-14 bg-gradient-to-br from-blue-100 to-blue-200 group-hover:animate-pulse">
             🏢
           </div>
-          <h3 className="font-semibold text-lg mt-4">Office Address</h3>
-          <p className="text-sm mt-1 text-gray-600">
-            No.15/1/C, 2nd Floor, Edirisinghe Tower,<br />
+          <h3 className="mt-4 text-lg font-semibold">Office Address</h3>
+          <p className="mt-1 text-sm text-gray-600">
+            No.15/1/C, 2nd Floor, Edirisinghe Tower,
+            <br />
             New Digana Road, Kundasale, Kandy
           </p>
         </div>
 
         {/* Card 2 */}
-        <div className="bg-white shadow-md text-center py-6 rounded-xl transform transition duration-500 hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-green-300 animate-fade-in-up group delay-100">
-          <div className="text-4xl w-14 h-14 mx-auto flex items-center justify-center bg-gradient-to-br from-green-100 to-green-200 rounded-full group-hover:animate-pulse">
+        <div className="py-6 text-center transition duration-500 delay-100 transform bg-white shadow-md rounded-xl hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-green-300 animate-fade-in-up group">
+          <div className="flex items-center justify-center mx-auto text-4xl rounded-full w-14 h-14 bg-gradient-to-br from-green-100 to-green-200 group-hover:animate-pulse">
             📞
           </div>
-          <h3 className="font-semibold text-lg mt-4">Call Us</h3>
-          <p className="text-sm mt-1 text-gray-600">+94 777 644 590</p>
+          <h3 className="mt-4 text-lg font-semibold">Call Us</h3>
+          <p className="mt-1 text-sm text-gray-600">+94 777 644 590</p>
         </div>
 
         {/* Card 3 */}
-        <div className="bg-white shadow-md text-center py-6 rounded-xl transform transition duration-500 hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-pink-300 animate-fade-in-up group delay-200">
-          <div className="text-4xl w-14 h-14 mx-auto flex items-center justify-center bg-gradient-to-br from-pink-100 to-pink-200 rounded-full group-hover:animate-pulse">
+        <div className="py-6 text-center transition duration-500 delay-200 transform bg-white shadow-md rounded-xl hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-pink-300 animate-fade-in-up group">
+          <div className="flex items-center justify-center mx-auto text-4xl rounded-full w-14 h-14 bg-gradient-to-br from-pink-100 to-pink-200 group-hover:animate-pulse">
             ✉️
           </div>
-          <h3 className="font-semibold text-lg mt-4">Email Us</h3>
-          <p className="text-sm mt-1 text-gray-600">everefficient.official@gmail.com</p>
+          <h3 className="mt-4 text-lg font-semibold">Email Us</h3>
+          <p className="mt-1 text-sm text-gray-600">
+            everefficient.official@gmail.com
+          </p>
         </div>
       </div>
 
-      <div className="p-3 justify-center items-center">
-        <div className="flex flex-col md:flex-row bg-white rounded-xl shadow-lg p-6">
-          <div className="flex md:basis-[50%] justify-center items-center">
+      <div className="flex items-center justify-center min-h-screen px-4 py-10 bg-gray-50">
+        <div className="grid w-full max-w-6xl grid-cols-1 overflow-hidden bg-white shadow-xl rounded-2xl md:grid-cols-2">
+          {/* Left Image Section */}
+          <div className="flex items-center justify-center bg-gray-100">
             <img
               src="/about-bg5.jpg"
               alt="Office"
-              className="rounded-xl w-full max-w-[400px] h-full max-h-[700px] object-cover"
+              className="object-cover w-full h-full max-h-[700px] rounded-none md:rounded-l-2xl"
             />
           </div>
-          <div className="w-full p-6 rounded-xl shadow-md bg-white">
-            <h2 className="text-2xl font-semibold mb-2">Contact Us</h2>
-            <p className="text-sm text-gray-600 mb-4">
-              Get in touch with us for any inquiries or support
+
+          {/* Right Contact Form */}
+          <div className="p-8 md:p-10">
+            <h2 className="mb-4 text-3xl font-bold text-gray-800">
+              Contact Us
+            </h2>
+            <p className="mb-6 text-sm text-gray-600">
+              We’d love to hear from you! Fill out the form below and we'll get
+              back to you soon.
             </p>
-            <form className="space-y-4">
-              <div className="flex flex-col md:flex-row gap-4">
+
+            <form className="space-y-5">
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                 <input
                   type="text"
                   placeholder="Your Name"
-                  className="w-full border px-3 py-2 rounded text-sm"
+                  className="w-full px-4 py-3 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
                 />
                 <input
                   type="email"
                   placeholder="Your Email"
-                  className="w-full border px-3 py-2 rounded text-sm"
+                  className="w-full px-4 py-3 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
                 />
               </div>
               <input
                 type="text"
-                placeholder="Your Subject"
-                className="w-full border px-3 py-2 rounded text-sm"
+                placeholder="Subject"
+                className="w-full px-4 py-3 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
               />
               <textarea
-                rows={4}
-                placeholder="Write Your Message"
-                className="w-full border px-3 py-2 rounded text-sm"
+                rows="5"
+                placeholder="Write your message..."
+                className="w-full px-4 py-3 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
               ></textarea>
               <button
                 type="submit"
-                className="bg-blue-700 text-white px-4 py-2 rounded text-sm font-semibold"
+                className="w-full py-3 text-sm font-semibold text-white transition duration-300 bg-blue-600 rounded-lg hover:bg-blue-700"
               >
-                SEND MESSAGE
+                Send Message
               </button>
             </form>
           </div>
@@ -128,4 +138,4 @@ export const ContactSection = (): JSX.Element => {
       </div>
     </div>
   );
-}
+};
