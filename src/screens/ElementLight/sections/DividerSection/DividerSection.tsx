@@ -58,7 +58,7 @@ export const DividerSection = (): JSX.Element => {
             <Card className="relative p-10 shadow-xl bg-everefficientlkgenoa-9 rounded-3xl">
               <CardContent className="p-0">
                 <p className="text-xl italic font-normal leading-loose tracking-wide text-everefficientlkmirage">
-                  "We don't just adapt to the digital age; we help businesses thrive
+                  "We don't just adapt to the digital age we help businesses thrive
                   in it through strategic, results-driven solutions."
                 </p>
 
