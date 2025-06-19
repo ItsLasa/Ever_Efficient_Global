@@ -60,7 +60,7 @@ export const BackgroundSection = (): JSX.Element => {
             <span className="text-[#275ba8] leading-[55px]">Say</span>
           </h2>
 
-          <p className="text-everefficientlkwhite text-[14.9px] text-center leading-[28.8px] max-w-[551px] font-['Inter',Helvetica] font-normal">
+          <p className="text-everefficientlkwhite text-[16.9px] text-center leading-[28.8px] max-w-[551px] font-['Inter',Helvetica] font-normal">
             Hear how we've helped businesses achieve digital transformation and
             growth.
           </p>
