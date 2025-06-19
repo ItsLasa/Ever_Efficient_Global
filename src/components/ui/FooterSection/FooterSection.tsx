@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import { Card, CardContent } from "../card";
 import { Button } from "../button";
+import { FaWhatsapp } from "react-icons/fa";
 
 // Data for quick links
 const quickLinks = [
@@ -32,7 +33,7 @@ const contactInfo = [
   },
   {
     icon: <MailIcon className="w-4 h-4" />,
-    text: "everefficient.official@gmail.com",
+    text: "Everefficient.Official@gmail.com",
     url: "https://everefficient.lk/index.html",
   },
 ];
@@ -105,7 +106,7 @@ export const FooterSection = (): JSX.Element => {
           {/* Newsletter Section */}
           <div className="flex flex-col">
             <div className="relative pb-5">
-              <h3 className="font-everefficient-lk-semantic-heading-4  text-everefficientlkwhite text-[length:var(--everefficient-lk-semantic-heading-4-font-size)] leading-[var(--everefficient-lk-semantic-heading-4-line-height)]">
+              <h3 className="font-semibold text-everefficientlkwhite text-[length:var(--everefficient-lk-semantic-heading-4-font-size)] leading-[var(--everefficient-lk-semantic-heading-4-line-height)]">
                 Newsletter
               </h3>
               <div className="w-[90px] h-[3px] mt-4 bg-everefficientlkwhite-20" />
@@ -146,7 +147,7 @@ export const FooterSection = (): JSX.Element => {
           </div>
 
           <div className="flex justify-end gap-[15px] ml-auto">
-            <div className="flex w-[38px] items-center justify-center bg-white rounded-[10px_10px_10px_0px]">
+            <div className="flex w-[38px] items-center justify-center ransition-all duration-300 hover:scale-105 bg-white rounded-[10px_10px_10px_0px]">
               <a
                 href="https://www.linkedin.com/company/ever-efficient"
                 rel="noopener noreferrer"
@@ -154,10 +155,24 @@ export const FooterSection = (): JSX.Element => {
                 className="text-everefficientlkcerulean-blue"
               >
                 <LinkedinIcon className="w-6 h-10" />
+                
               </a>
             </div>
 
-            <div className="flex w-[38px] items-center justify-center bg-white rounded-[10px_10px_10px_0px]">
+            <div className="flex w-[38px] items-center justify-center ransition-all duration-300 hover:scale-105 bg-white rounded-[10px_10px_10px_0px]">
+              <a
+                href="https://wa.me/94707446334"
+                rel="noopener noreferrer"
+                target="_blank"
+                className="text-everefficientlkcerulean-blue"
+              >
+             
+                <FaWhatsapp className="w-6 h-10" />
+                
+              </a>
+            </div>
+
+            <div className="flex w-[38px] items-center justify-center transition-all duration-300 hover:scale-105 bg-white rounded-[10px_10px_10px_0px]">
               <a
                 href="https://wa.me/94707446334"
                 rel="noopener noreferrer"
