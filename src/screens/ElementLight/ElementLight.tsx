@@ -16,6 +16,7 @@ import { HeaderSection } from "../../components/ui/HeaderSection";
 import { MainContentSection } from "./sections/MainContentSection/MainContentSection";
 import { OverlapGroupSection } from "./sections/OverlapGroupSection";
 import { OverlapSection } from "./sections/OverlapSection";
+import { InfiniteSlider } from "../../components/ui/infinite-slider";
 
 export const ElementLight = (): JSX.Element => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -147,8 +148,8 @@ export const ElementLight = (): JSX.Element => {
 
       {/* Service Cards Section */}
       <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto perspective-1000">
+        <div className="container px-4 mx-auto">
+          <div className="grid max-w-6xl grid-cols-1 gap-8 mx-auto md:grid-cols-3 perspective-1000">
             {serviceCards.map((card) => (
               <Card
                 key={card.id}
@@ -166,23 +167,23 @@ export const ElementLight = (): JSX.Element => {
           `}
                 style={{ transformStyle: "preserve-3d" }}
               >
-                <CardContent className="p-8 relative h-full">
-                  <div className="absolute top-4 right-6 text-5xl font-bold text-black leading-none select-none">
+                <CardContent className="relative h-full p-8">
+                  <div className="absolute text-5xl font-bold leading-none text-black select-none top-4 right-6">
                     {card.id}
                   </div>
 
                   <div className="flex items-center justify-center w-20 h-20 bg-everefficientlkblack rounded-[40px] shadow-[5px_5px_0px_#f2f3f5] mb-6">
                     <div
-                      className="w-12 h-12 bg-cover bg-center"
+                      className="w-12 h-12 bg-center bg-cover"
                       style={{ backgroundImage: `url(${card.iconUrl})` }}
                     />
                   </div>
 
-                  <h3 className="text-xl font-semibold text-everefficientlkmirage mb-4">
+                  <h3 className="mb-4 text-xl font-semibold text-everefficientlkmirage">
                     {card.title}
                   </h3>
 
-                  <p className="text-zinc-700 leading-relaxed">
+                  <p className="leading-relaxed text-zinc-700">
                     {card.description}
                   </p>
                 </CardContent>
@@ -194,8 +195,8 @@ export const ElementLight = (): JSX.Element => {
 
       {/* Our Story Section */}
       <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-7xl mx-auto items-center">
+        <div className="container px-4 mx-auto">
+          <div className="grid items-center grid-cols-1 gap-12 mx-auto lg:grid-cols-2 max-w-7xl">
             {/* Images Column */}
             <div className="space-y-6">
               <div className="grid grid-cols-2 gap-6">
@@ -223,10 +224,10 @@ export const ElementLight = (): JSX.Element => {
               </div>
 
               <Card className="bg-everefficientlkcerulean-blue rounded-[50px_50px_50px_0px] p-6 shadow-[0px_0px_40px_5px_#0000001a]">
-                <CardContent className="p-0 flex items-center gap-4">
-                  <div className="flex items-center justify-center w-20 h-20 bg-everefficientlkwhite rounded-full">
+                <CardContent className="flex items-center gap-4 p-0">
+                  <div className="flex items-center justify-center w-20 h-20 rounded-full bg-everefficientlkwhite">
                     <div
-                      className="w-12 h-12 bg-cover bg-center"
+                      className="w-12 h-12 bg-center bg-cover"
                       style={{ backgroundImage: "url(/analytics-icon.png)" }}
                     />
                   </div>
@@ -243,11 +244,11 @@ export const ElementLight = (): JSX.Element => {
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <img
-                    className="w-7 h-5"
+                    className="h-5 w-7"
                     alt="Component"
                     src="/component-1-66.svg"
                   />
-                  <span className="text-everefficientlkcerulean-blue font-bold text-lg tracking-widest">
+                  <span className="text-lg font-bold tracking-widest text-everefficientlkcerulean-blue">
                     OUR STORY
                   </span>
                 </div>
@@ -255,7 +256,7 @@ export const ElementLight = (): JSX.Element => {
               </div>
 
               <div>
-                <h2 className="text-5xl lg:text-6xl  font-bold leading-tight mb-6">
+                <h2 className="mb-6 text-5xl font-bold leading-tight lg:text-6xl">
                   <span className="text-everefficientlkmirage">
                     Pioneering{" "}
                   </span>
@@ -272,7 +273,7 @@ export const ElementLight = (): JSX.Element => {
                   </span>
                 </h2>
 
-                <p className="text-zinc-600 text-lg leading-relaxed">
+                <p className="text-lg leading-relaxed text-zinc-600">
                   Ever Efficient emerged from a vision to bridge the gap between
                   traditional business practices and the digital revolution.
                   What began as a small consulting firm has grown into a full
@@ -282,7 +283,7 @@ export const ElementLight = (): JSX.Element => {
               </div>
 
               <div className="">
-                <div className="flex flex-col md:flex-row items-center justify-start gap-6 max-w-7xl mx-auto">
+                <div className="flex flex-col items-center justify-start gap-6 mx-auto md:flex-row max-w-7xl">
                   <Button className="bg-[#275ba8] hover:bg-[#1e4a8c] rounded-[50px_50px_50px_0px] h-14 px-8 shadow-[0px_0px_40px_5px_#0000000d] transition-all duration-300">
                     <span className="text-everefficientlkwhite text-sm tracking-[0.14px] leading-[25.2px]">
                       Our Services
@@ -303,10 +304,10 @@ export const ElementLight = (): JSX.Element => {
                       />
                     </div>
                     <div>
-                      <div className="text-everefficientlkcerulean-blue text-base font-medium">
+                      <div className="text-base font-medium text-everefficientlkcerulean-blue">
                         Get Free Consultation
                       </div>
-                      <div className="text-everefficientlkblack text-lg font-semibold">
+                      <div className="text-lg font-semibold text-everefficientlkblack">
                         +94 777 644 590
                       </div>
                     </div>
@@ -319,9 +320,9 @@ export const ElementLight = (): JSX.Element => {
       </section>
       <Separator className="w-full h-px border-t border-[#757f95] opacity-25" />
       {/* Contact Section */}
-      {/* <section className="py-6  px-12 bg-gray-50 ">
+      {/* <section className="px-12 py-6 bg-gray-50 ">
         <div className="container mx-auto px-">
-          <div className="flex flex-col md:flex-row items-center justify-end gap-6 max-w-7xl mx-auto">
+          <div className="flex flex-col items-center justify-end gap-6 mx-auto md:flex-row max-w-7xl">
             <Button className="bg-[#275ba8] hover:bg-[#1e4a8c] rounded-[50px_50px_50px_0px] h-14 px-8 shadow-[0px_0px_40px_5px_#0000000d] transition-all duration-300">
               <span className="text-everefficientlkwhite text-sm tracking-[0.14px] leading-[25.2px]">
                 Our Services
@@ -342,10 +343,10 @@ export const ElementLight = (): JSX.Element => {
                 />
               </div>
               <div>
-                <div className="text-everefficientlkcerulean-blue text-base font-medium">
+                <div className="text-base font-medium text-everefficientlkcerulean-blue">
                   Get Free Consultation
                 </div>
-                <div className="text-everefficientlkblack text-lg font-semibold">
+                <div className="text-lg font-semibold text-everefficientlkblack">
                   +94 777 644 590
                 </div>
               </div>
@@ -360,7 +361,7 @@ export const ElementLight = (): JSX.Element => {
       {/* Contact Section */}
       {/* <section className="py-12 bg-gray-50 ">
         <div className="container mx-auto px-">
-          <div className="flex flex-col md:flex-row items-center justify-end gap-6 max-w-7xl mx-auto">
+          <div className="flex flex-col items-center justify-end gap-6 mx-auto md:flex-row max-w-7xl">
             <Button className="bg-[#275ba8] hover:bg-[#1e4a8c] rounded-[50px_50px_50px_0px] h-14 px-8 shadow-[0px_0px_40px_5px_#0000000d] transition-all duration-300">
               <span className="text-everefficientlkwhite text-sm tracking-[0.14px] leading-[25.2px]">
                 Our Services
@@ -381,10 +382,10 @@ export const ElementLight = (): JSX.Element => {
                 />
               </div>
               <div>
-                <div className="text-everefficientlkcerulean-blue text-base font-medium">
+                <div className="text-base font-medium text-everefficientlkcerulean-blue">
                   Get Free Consultation
                 </div>
-                <div className="text-everefficientlkblack text-lg font-semibold">
+                <div className="text-lg font-semibold text-everefficientlkblack">
                   +94 777 644 590
                 </div>
               </div>
@@ -399,14 +400,14 @@ export const ElementLight = (): JSX.Element => {
 
       {/* Media Section */}
       <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto items-center">
+        <div className="container px-4 mx-auto">
+          <div className="grid items-center grid-cols-1 gap-8 mx-auto lg:grid-cols-2 max-w-7xl">
             {/* Full Image - No Cropping */}
             <div className="h-[324px] lg:h-[576px] w-full flex items-center justify-center bg-gray-100 rounded-2xl overflow-hidden">
               <img
                 src="/addv-jpg.png"
                 alt="Advertisement"
-                className="h-full w-auto object-contain"
+                className="object-contain w-auto h-full"
               />
             </div>
 
@@ -425,7 +426,7 @@ export const ElementLight = (): JSX.Element => {
                 onClick={toggleMute}
                 className="absolute bottom-6 right-6 bg-[#275ba8] hover:bg-[#1e4a8c] rounded-[50px_50px_50px_0px] shadow-[0px_0px_40px_5px_#0000000d] px-6 py-3 transition-all duration-300"
               >
-                <span className="text-everefficientlkwhite font-semibold">
+                <span className="font-semibold text-everefficientlkwhite">
                   {isMuted ? "🔇 UNMUTE" : "🔊 MUTE"}
                 </span>
               </Button>
@@ -436,24 +437,19 @@ export const ElementLight = (): JSX.Element => {
 
       {/* Thumbnails Section */}
       <section className="py-12 overflow-hidden bg-everefficientlkathens-gray">
-        <div className="container px-4 mx-auto">
-          <div className="relative w-full overflow-hidden">
-            <div className="flex gap-12 whitespace-nowrap animate-marquee">
-              {thumbnails.concat(thumbnails).map((thumb, index) => (
-                <div
-                key={index}
-                className="w-[140px] h-[90px] flex-shrink-0 bg-white p-4 rounded-xl shadow-sm flex items-center justify-center"
-              >
-                <div
-                  className="w-full h-full bg-center bg-no-repeat bg-contain"
-                  style={{ backgroundImage: `url(${thumb.url})` }}
-                />
-              </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <div className="container px-4 mx-auto">
+        <InfiniteSlider speedOnHover={20} gap={24}>
+          {thumbnails.concat(thumbnails).map((thumb, index) => (
+            <img
+              key={index}
+              src={thumb.url}
+              alt={thumb.alt || `Thumbnail ${index + 1}`}
+              className="aspect-[14/9] w-[140px] rounded-xl bg-white shadow-sm object-contain"
+            />
+          ))}
+        </InfiniteSlider>
+      </div>
+    </section>
 
       <MainContentSection />
       <OverlapGroupSection />
@@ -536,11 +532,11 @@ export const ElementLight = (): JSX.Element => {
       <FooterSection />
 
       {/* Chat buttons */}
-      <div className="fixed bottom-6 right-6 flex gap-3 z-50">
+      <div className="fixed z-50 flex gap-3 bottom-6 right-6">
         <Button className="w-14 h-14 p-0 flex items-center justify-center bg-[#0080ff] hover:bg-[#0066cc] rounded-full shadow-lg transition-all duration-300 hover:scale-110">
           <img className="w-8 h-8" alt="Chat" src="/component-6-10.svg" />
         </Button>
-        <Button className="w-14 h-14 p-0 flex items-center justify-center bg-everefficientlkmalachite hover:bg-green-600 rounded-full shadow-lg transition-all duration-300 hover:scale-110">
+        <Button className="flex items-center justify-center p-0 transition-all duration-300 rounded-full shadow-lg w-14 h-14 bg-everefficientlkmalachite hover:bg-green-600 hover:scale-110">
           <img className="w-7 h-7" alt="WhatsApp" src="/component-6-11.svg" />
         </Button>
       </div>
