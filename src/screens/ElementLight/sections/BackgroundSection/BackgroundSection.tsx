@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, CardContent } from "../../../../components/ui/card";
+import { motion } from "framer-motion"
 
 // Testimonial data for mapping
 const testimonials = [
@@ -68,6 +69,12 @@ export const BackgroundSection = (): JSX.Element => {
         {/* Testimonial cards */}
         <div className="flex justify-center gap-[22px] w-full py-1.5">
           {testimonials.map((testimonial) => (
+            <motion.div
+            initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
             <Card
               key={testimonial.id}
               className="w-[274.5px] h-[280.98px] bg-everefficientlkwhite rounded-[40px_40px_40px_0px] border-b-[5px] border-[#275ba8] relative"
@@ -84,7 +91,7 @@ export const BackgroundSection = (): JSX.Element => {
                     />
                   ))}
                 </div>
-
+          
                 {/* Testimonial text */}
                 <div className="w-56 h-[86px] mt-4 ml-[25px]">
                   <div className="relative w-[220px] h-[87px]">
@@ -92,13 +99,13 @@ export const BackgroundSection = (): JSX.Element => {
                       {testimonial.quote}
                     </p>
                     <img
-                      className="absolute w-4 h-4 bottom-0 right-0"
+                      className="absolute bottom-0 right-0 w-4 h-4"
                       alt="More"
                       src="/component-1-18.svg"
                     />
                   </div>
                 </div>
-
+          
                 {/* Profile section */}
                 <div className="flex items-center mt-4 ml-[25px]">
                   <div className="flex flex-col w-[75px] items-start p-1.5 rounded-[50px] border-2 border-dashed border-[#275ba8]">
@@ -116,7 +123,7 @@ export const BackgroundSection = (): JSX.Element => {
                     </p>
                   </div>
                 </div>
-
+          
                 {/* Quote icon */}
                 <div className="absolute top-0 right-[30px] flex flex-col w-10 h-10 items-start pl-[6.88px] pr-[6.87px] pt-px pb-2 bg-everefficientlkcerulean-blue rounded-[50px_50px_50px_0px]">
                   <img
@@ -127,6 +134,7 @@ export const BackgroundSection = (): JSX.Element => {
                 </div>
               </CardContent>
             </Card>
+          </motion.div>
           ))}
         </div>
       </div>
