@@ -186,13 +186,13 @@ export const ServicesSection = (): JSX.Element => {
           </div>
         </a>
         <div className="relative z-10 text-center px-3 max-w-[1200px]">
-          <h1 className="text-everefficientlkwhite font-everefficient-lk-semantic-heading-2-title text-[40.25px] leading-[45px] font-bold">
+          <h1 className="text-everefficientlkwhite text-[32px] md:text-[40.25px] leading-[40px] md:leading-[45px] font-bold">
             Services
           </h1>
-          <div className="mt-4 flex items-center justify-center gap-[29.45px]">
+          <div className="mt-4 flex flex-wrap justify-center items-center gap-4 md:gap-[29.45px]">
             <div className="flex items-center">
               <a
-                className="text-everefficientlkwhite font-everefficient-lk-inter-medium-title whitespace-nowrap"
+                className="text-sm text-everefficientlkwhite md:text-base"
                 href="https://everefficient.lk/index.html"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -200,128 +200,102 @@ export const ServicesSection = (): JSX.Element => {
                 Home
               </a>
               <img
-                className="w-4 h-[28.8px] ml-2"
+                className="w-4 h-[20px] md:h-[28.8px] ml-2"
                 alt="Separator"
                 src="/component-1-2-8.svg"
               />
             </div>
-            <span className="text-everefficientlkcerulean-blue font-everefficient-lk-semantic-item-title whitespace-nowrap">
+            <span className="text-sm text-everefficientlkcerulean-blue md:text-base">
               Services
             </span>
           </div>
         </div>
       </section>
 
-      {/* Service Cards */}
-      {services.map((service, index) => (
+      {/* Responsive Service Cards */}
+      {services.map((service) => (
         <div
           key={service.id}
-          className={`w-full flex justify-center py-[30px] ${service.hasBg ? "bg-everefficientlkathens-gray" : ""}`}
+          className={`w-full flex justify-center py-[50px] px-4 ${
+            service.hasBg ? "bg-everefficientlkathens-gray" : "bg-white"
+          }`}
         >
-          <div className="max-w-[1200px] w-full">
-            <div className="flex flex-wrap items-center">
+          <div className="max-w-[1200px] w-full rounded-3xl overflow-hidden shadow-sm">
+            <div className="flex flex-col items-center gap-10 md:flex-row">
               {/* Left Content */}
-              <div className="flex-1 px-3">
-                <div className="relative w-full">
-                  {/* Category and Title */}
-                  <div className="flex flex-col items-start gap-[15.39px] pt-[7px]">
-                    <div className="relative h-5   border-b-2 border-[#275ba8] font-bold flex items-center">
-                      {service.iconPrefix === "#" ? (
-                        <div className="w-[22px]  h-[21px] text-everefficientlkcerulean-blue font-everefficient-lk-font-awesome-5-free-solid-upper">
-                          <span className="text-xl "></span>
-                        </div>
-                      ) : (
-                        <img
-                          className="w-6 h-[21px]"
-                          alt="Category icon"
-                          src={service.iconPrefix}
-                        />
-                      )}
-                      <div className="ml-1 text-xl  font-everefficient-lk-inter-bold-upper text-everefficientlkcerulean-blue tracking-[4px] whitespace-nowrap">
-                        {service.category}
+              <div className="flex-1 w-full px-4 space-y-6">
+                {/* Category and Title */}
+                <div className="space-y-3">
+                  <div className="flex items-center gap-2 border-b-2 border-[#275ba8] pb-2">
+                    {service.iconPrefix === "#" ? (
+                      <div className="w-[22px] h-[22px] text-everefficientlkcerulean-blue">
+                        <span className="text-xl"></span>
+                      </div>
+                    ) : (
+                      <img
+                        src={service.iconPrefix}
+                        alt="Category icon"
+                        className="w-5 h-5"
+                      />
+                    )}
+                    <span className="text-sm font-semibold uppercase tracking-[3px] text-everefficientlkcerulean-blue">
+                      {service.category}
+                    </span>
+                  </div>
+                  <h2 className="text-2xl font-bold leading-tight sm:text-3xl md:text-4xl text-everefficientlkmirage">
+                    <span>{service.title.split(" ")[0]}</span>{" "}
+                    <span className="text-[#275ba8]">
+                      {service.title.split(" ").slice(1).join(" ")}
+                    </span>
+                  </h2>
+                </div>
+
+                {/* Description */}
+                <p className="text-[15px] md:text-[16.5px] leading-[26px] text-everefficientlkslate-gray font-light">
+                  {service.description}
+                </p>
+
+                {/* Features */}
+                <div className="space-y-3">
+                  {service.features.map((feature, idx) => (
+                    <div key={idx} className="flex items-start gap-4">
+                      <img src={feature.icon} alt="Feature icon" className="w-4 h-4 mt-1" />
+                      <div className="text-[#757f95] text-[14px] md:text-[15px] leading-[25px]">
+                        <span className="font-bold">{feature.title}</span>
+                        <span className="ml-1">{feature.description}</span>
                       </div>
                     </div>
+                  ))}
+                </div>
 
-                    <div className="w-full">
-                      <h2 className="font-['Inter',Helvetica] font-bold text-transparent text-[49px] leading-[55px]">
-                        <span className="text-[#19232b]">
-                          {service.title.split(" ").slice(0, 1).join(" ")}{" "}
-                        </span>
-                        <span className="text-[#275ba8]">
-                          {service.title
-                            .split(" ")
-                            .slice(1)
-                            .join(" ")
-                            .replace(" ", "\n")}
-                        </span>
-                      </h2>
-                    </div>
-                  </div>
-
-                  {/* Description */}
-                  <div className="py-3">
-                    <p className=" font-sans   text-everefficientlkslate-gray text-lg leading-[26px]">
-                      {service.description}
-                    </p>
-                  </div>
-
-                  {/* Features */}
-                  <div className="flex flex-col gap-3 mt-4">
-                    {service.features.map((feature, idx) => (
-                      <div
-                        key={idx}
-                        className="relative w-full flex items-start"
-                      >
-                        <div className="ml-[30px] mt-1">
-                          <img
-                            className="w-4 h-4"
-                            alt="Feature icon"
-                            src={feature.icon}
-                          />
-                        </div>
-                        <div className="ml-4 font-sans font-normal text-everefficientlkslate-gray text-[14.8px] leading-[28.8px]">
-                          <span className="font-bold text-[#757f95]">
-                            {feature.title}
-                          </span>
-                          <span className="text-[#757f95] ml-1">
-                            {feature.description}
-                          </span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* CTA Button */}
-                  <div className="mt-8">
-                    <Button
-                      className="h-[53px] bg-[#275ba8] rounded-[50px_50px_50px_0px] shadow-[0px_0px_40px_5px_#0000000d] hover:bg-[#1e4a8a]"
-                      asChild
+                {/* CTA Button */}
+                <div className="pt-4">
+                  <Button
+                    className="h-[50px] bg-[#275ba8] hover:bg-[#1e4a8a] rounded-[50px_50px_50px_0px] shadow-md transition-all duration-300"
+                    asChild
+                  >
+                    <a
+                      href={service.ctaLink}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      className="flex items-center px-6"
                     >
-                      <a
-                        href={service.ctaLink}
-                        rel="noopener noreferrer"
-                        target="_blank"
-                        className="flex items-center"
-                      >
-                        <span className="font-everefficient-lk-inter-semi-bold-upper text-everefficientlkwhite text-sm tracking-[1px]">
-                          {service.ctaText}
-                        </span>
-                        <ArrowRightIcon className="ml-2 w-[15px] h-[15px]" />
-                      </a>
-                    </Button>
-                  </div>
+                      <span className="text-white text-sm font-medium tracking-[1px]">
+                        {service.ctaText}
+                      </span>
+                      <ArrowRightIcon className="ml-2 w-[15px] h-[15px]" />
+                    </a>
+                  </Button>
                 </div>
               </div>
 
               {/* Right Image */}
-              <div className="flex-1 pl-[42px] pr-3">
-                <div className="relative w-full">
-                  <div className="absolute w-[546px] h-[364px] top-0 left-0 bg-everefficientlkblack rounded-[50px_50px_50px_0px] rotate-[-8deg]" />
-                  <div
-                    className="relative max-w-[546px] w-full h-[364px] rounded-[100px_100px_100px_0px] bg-cover bg-[50%_50%]"
-                    style={{ backgroundImage: `url(${service.image})` }}
-                  />
-                </div>
+              <div className="relative flex-1 w-full px-4">
+                <div className="absolute w-full max-w-[520px] h-[360px] top-0 left-0 bg-everefficientlkblack rounded-[50px_50px_50px_0px] rotate-[-6deg] z-0 opacity-10 hidden md:block" />
+                <div
+                  className="relative w-full h-[300px] sm:h-[340px] md:h-[360px] max-w-[520px] bg-cover bg-center rounded-[100px_100px_100px_0px] z-10 shadow-lg transition-transform duration-500 hover:scale-[1.02]"
+                  style={{ backgroundImage: `url(${service.image})` }}
+                />
               </div>
             </div>
           </div>
