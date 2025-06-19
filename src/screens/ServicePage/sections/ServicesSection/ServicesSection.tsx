@@ -1,7 +1,7 @@
 import { ArrowRightIcon } from "lucide-react";
 import { Button } from "../../../../components/ui/button";
 import SpiderWeb from "../../../../components/ui/SpiderWeb";
-
+import { motion } from "framer-motion";
 // Service data for mapping
 const services = [
   {
@@ -179,7 +179,12 @@ const services = [
 export const ServicesSection = (): JSX.Element => {
   return (
     <div className="relative w-full bg-everefficientlkwhite">
-      <section className="relative w-full h-[400px] bg-black overflow-hidden flex items-center justify-center">
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="relative w-full h-[400px] bg-black overflow-hidden flex items-center justify-center"
+      >
         <a href="#about" className="absolute inset-0 z-0 block">
           <div className="flex w-full h-full">
             <SpiderWeb />
@@ -210,12 +215,16 @@ export const ServicesSection = (): JSX.Element => {
             </span>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Responsive Service Cards */}
-      {services.map((service) => (
-        <div
+      {services.map((service, index) => (
+        <motion.div
           key={service.id}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: index * 0.1 }}
           className={`w-full flex justify-center py-[50px] px-4 ${
             service.hasBg ? "bg-everefficientlkathens-gray" : "bg-white"
           }`}
@@ -299,7 +308,7 @@ export const ServicesSection = (): JSX.Element => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       ))}
     </div>
   );
