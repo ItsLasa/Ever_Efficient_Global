@@ -108,8 +108,8 @@ export const AboutSection = (): JSX.Element => {
       </section>
       
       <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-7xl mx-auto items-center">
+        <div className="container px-4 mx-auto">
+          <div className="grid items-center grid-cols-1 gap-12 mx-auto lg:grid-cols-2 max-w-7xl">
             <div className="space-y-6">
               <div className="grid grid-cols-2 gap-6">
                 <div
@@ -133,10 +133,10 @@ export const AboutSection = (): JSX.Element => {
                 </div>
               </div>
               <Card className="bg-everefficientlkcerulean-blue rounded-[50px_50px_50px_0px] p-6 shadow-[0px_0px_40px_5px_#0000001a]">
-                <CardContent className="p-0 flex items-center gap-4">
-                  <div className="flex items-center justify-center w-20 h-20 bg-everefficientlkwhite rounded-full">
+                <CardContent className="flex items-center gap-4 p-0">
+                  <div className="flex items-center justify-center w-20 h-20 rounded-full bg-everefficientlkwhite">
                     <div
-                      className="w-12 h-12 bg-cover bg-center"
+                      className="w-12 h-12 bg-center bg-cover"
                       style={{ backgroundImage: "url(/analytics-icon.png)" }}
                     />
                   </div>
@@ -151,18 +151,18 @@ export const AboutSection = (): JSX.Element => {
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <img
-                    className="w-7 h-5"
+                    className="h-5 w-7"
                     alt="Component"
                     src="/component-1-66.svg"
                   />
-                  <span className="text-everefficientlkcerulean-blue font-bold text-lg tracking-widest">
+                  <span className="text-lg font-bold tracking-widest text-everefficientlkcerulean-blue">
                     OUR STORY
                   </span>
                 </div>
                 <div className="w-32 h-0.5 bg-everefficientlkcerulean-blue"></div>
               </div>
               <div>
-                <h2 className="text-5xl lg:text-6xl  font-bold leading-tight mb-6">
+                <h2 className="mb-6 text-5xl font-bold leading-tight lg:text-6xl">
                   <span className="text-everefficientlkmirage">Pioneering </span>
                   <span className="text-everefficientlkcerulean-blue">
                     Digital
@@ -176,7 +176,7 @@ export const AboutSection = (): JSX.Element => {
                     2015
                   </span>
                 </h2>
-                <p className="text-zinc-600 text-lg leading-relaxed">
+                <p className="text-lg leading-relaxed text-zinc-600">
                   Ever Efficient emerged from a vision to bridge the gap between traditional
                   business practices and the digital revolution. What began as a small
                   consulting firm has grown into a full service digital management agency,
@@ -184,7 +184,7 @@ export const AboutSection = (): JSX.Element => {
                 </p>
               </div>
               <div className="">
-                <div className="flex flex-col md:flex-row items-center justify-start gap-6 max-w-7xl mx-auto">
+                <div className="flex flex-col items-center justify-start gap-6 mx-auto md:flex-row max-w-7xl">
                   <Button className="bg-[#275ba8] hover:bg-[#1e4a8c] rounded-[50px_50px_50px_0px] h-14 px-8 shadow-[0px_0px_40px_5px_#0000000d] transition-all duration-300">
                     <span className="text-everefficientlkwhite text-sm tracking-[0.14px] leading-[25.2px]">
                       Our Services
@@ -204,10 +204,10 @@ export const AboutSection = (): JSX.Element => {
                       />
                     </div>
                     <div>
-                      <div className="text-everefficientlkcerulean-blue text-base font-medium">
+                      <div className="text-base font-medium text-everefficientlkcerulean-blue">
                         Get Free Consultation
                       </div>
-                      <div className="text-everefficientlkblack text-lg font-semibold">
+                      <div className="text-lg font-semibold text-everefficientlkblack">
                         +94 777 644 590
                       </div>
                     </div>
@@ -230,7 +230,7 @@ export const AboutSection = (): JSX.Element => {
           backgroundRepeat: 'no-repeat',
         }}
       >
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           {features.map((item, idx) => (
             <div
               key={idx}
@@ -249,10 +249,10 @@ export const AboutSection = (): JSX.Element => {
               <div className="text-5xl font-bold transition-all duration-300 group-hover:text-yellow-200">
                 {item.number}
               </div>
-              <h3 className="font-semibold text-2xl mt-2 group-hover:underline underline-offset-4 decoration-yellow-300">
+              <h3 className="mt-2 text-2xl font-semibold ">
                 {item.title}
               </h3>
-              <p className="text-lg mt-1 opacity-90 group-hover:opacity-100 group-hover:tracking-wide transition-all duration-300">
+              <p className="mt-1 text-lg transition-all duration-300 opacity-90 group-hover:opacity-100 group-hover:tracking-wide">
                 {item.description}
               </p>
             </div>
@@ -307,7 +307,7 @@ export const AboutSection = (): JSX.Element => {
                         {testimonial.quote}
                       </p>
                       <img
-                        className="absolute w-4 h-4 bottom-0 right-0"
+                        className="absolute bottom-0 right-0 w-4 h-4"
                         alt="More"
                         src="/component-1-18.svg"
                       />
