@@ -438,7 +438,7 @@ export const ElementLight = (): JSX.Element => {
       {/* Thumbnails Section */}
       <section className="py-12 overflow-hidden bg-everefficientlkathens-gray">
       <div className="container px-4 mx-auto">
-        <InfiniteSlider speedOnHover={20} gap={24}>
+        <InfiniteSlider speedOnHover={16} gap={24}>
           {thumbnails.concat(thumbnails).map((thumb, index) => (
             <img
               key={index}

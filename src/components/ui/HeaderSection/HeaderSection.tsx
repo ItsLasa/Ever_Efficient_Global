@@ -43,7 +43,7 @@ export const HeaderSection = (): JSX.Element => {
             </NavigationMenuList>
           </NavigationMenu>
 
-          {/* Contact Button for Desktop */}
+          {/* Desktop Contact Button */}
           <div className="hidden md:block">
             <Button
               asChild
@@ -64,27 +64,24 @@ export const HeaderSection = (): JSX.Element => {
             </Button>
           </div>
 
-          {/* Mobile Menu Toggle Button */}
+          {/* Mobile Menu Toggle */}
           <button
-            className="z-50 text-white md:hidden focus:outline-none"
+            className="relative z-50 text-white md:hidden"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle Menu"
           >
             {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
 
-        {/* Mobile Navigation Menu */}
-        <div
-          className={`md:hidden mt-4 transition-all duration-300 ${
-            isMobileMenuOpen ? "block" : "hidden"
-          }`}
-        >
-          <div className="flex flex-col gap-4 p-4 rounded-lg bg-black/90">
+        {/* Mobile Navigation */}
+        {isMobileMenuOpen && (
+          <div className="p-4 mt-4 space-y-4 transition-all duration-300 rounded-lg md:hidden ">
             {navigationLinks.map((link, index) => (
               <a
                 key={index}
                 href={link.url}
-                className="text-base font-medium text-white hover:text-blue-400"
+                className="block text-base font-medium text-white hover:text-blue-400"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.text}
@@ -92,14 +89,14 @@ export const HeaderSection = (): JSX.Element => {
             ))}
             <Button
               asChild
-              className="bg-[#275ba8] hover:bg-[#1e4a8c] rounded-md text-sm text-white h-11"
+              className="w-full bg-[#275ba8] hover:bg-[#1e4a8c] rounded-md text-sm text-white h-11"
             >
               <a href="/Contact" onClick={() => setIsMobileMenuOpen(false)}>
                 Contact Us
               </a>
             </Button>
           </div>
-        </div>
+        )}
       </div>
     </header>
   );
