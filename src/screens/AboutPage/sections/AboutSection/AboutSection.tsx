@@ -89,7 +89,7 @@ export const AboutSection = (): JSX.Element => {
           <h1 className="text-everefficientlkwhite text-3xl sm:text-4xl md:text-[40px] leading-[1.2] font-bold">
             About Us
           </h1>
-          <div className="mt-3 sm:mt-4 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-[29px]">
+          {/* <div className="mt-3 sm:mt-4 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-[29px]">
             <div className="flex items-center">
               <a
                 className="text-everefficientlkwhite whitespace-nowrap text-sm sm:text-base"
@@ -108,7 +108,7 @@ export const AboutSection = (): JSX.Element => {
             <span className="text-everefficientlkcerulean-blue whitespace-nowrap text-sm sm:text-base">
               About Us
             </span>
-          </div>
+          </div> */}
         </div>
       </section>
 

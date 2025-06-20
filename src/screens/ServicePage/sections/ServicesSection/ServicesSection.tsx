@@ -194,7 +194,7 @@ export const ServicesSection = (): JSX.Element => {
           <h1 className="text-everefficientlkwhite text-[32px] md:text-[40.25px] leading-[40px] md:leading-[45px] font-bold">
             Services
           </h1>
-          <div className="mt-4 flex flex-wrap justify-center items-center gap-4 md:gap-[29.45px]">
+          {/* <div className="mt-4 flex flex-wrap justify-center items-center gap-4 md:gap-[29.45px]">
             <div className="flex items-center">
               <a
                 className="text-sm text-everefficientlkwhite md:text-base"
@@ -213,7 +213,7 @@ export const ServicesSection = (): JSX.Element => {
             <span className="text-sm text-everefficientlkcerulean-blue md:text-base">
               Services
             </span>
-          </div>
+          </div> */}
         </div>
       </motion.section>
 
