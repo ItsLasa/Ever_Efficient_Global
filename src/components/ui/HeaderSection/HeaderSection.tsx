@@ -45,7 +45,7 @@ export const HeaderSection = (): JSX.Element => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/">
-          <div className="w-[210px] h-[60px] bg-[url('/newLogo.png')] bg-cover bg-no-repeat bg-left" />
+          <div className="w-[210px] h-[50px] bg-[url('/resize.png')] bg-cover bg-no-repeat bg-left" />
 
           </Link>
 
