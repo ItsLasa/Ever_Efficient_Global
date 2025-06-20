@@ -50,6 +50,6 @@ export default function SpiderWeb() {
         },
         detectRetina: true,
       }}
-    />
-  );
+    />
+  );
 }
