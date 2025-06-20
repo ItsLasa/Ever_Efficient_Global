@@ -41,7 +41,7 @@ export const ContactSection = (): JSX.Element => {
   ];
   return (
     <div className="relative w-full bg-everefficientlkwhite">
-      <section className="relative w-full h-[400px] bg-[black]  overflow-hidden  flex items-center justify-center">
+      <section className="relative w-full h-[400px] bg-[black]  overflow-hidden hidden flex items-center justify-center">
         <a href="#about" className="absolute inset-0 z-0 block">
           {/* <div className="flex w-full h-full">
             <SpiderWeb />
@@ -72,7 +72,7 @@ export const ContactSection = (): JSX.Element => {
         </div>
       </section>
 
-      <section className="py-16 px-4 bg-gradient-to-b mt-10 from-gray-50 to-white">
+      <section className="py-16 px-4 bg-gradient-to-b mt-16 from-gray-50 to-white">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">Get in Touch</h2>
         <p className="text-gray-600 mb-12">
@@ -159,7 +159,7 @@ export const ContactSection = (): JSX.Element => {
         </div>
       </div>
 
-      <div className="w-full h-[400px]">
+      {/* <div className="w-full h-[400px]">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63352.70539195056!2d80.66264422768067!3d7.29454365868474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae366da4d7b2097%3A0x1f3e1102cf7aa2b5!2sKundasale!5e0!3m2!1sen!2slk!4v1718698000000!5m2!1sen!2slk"
           width="100%"
@@ -168,7 +168,7 @@ export const ContactSection = (): JSX.Element => {
           loading="lazy"
           allowFullScreen
         ></iframe>
-      </div>
+      </div> */}
     </div>
   );
 };
