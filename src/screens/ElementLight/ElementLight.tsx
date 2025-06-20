@@ -398,33 +398,49 @@ export const ElementLight = (): JSX.Element => {
       <OverlapGroupSection />
 
       {/* FAQ Section */}
-      <section className="py-8 md:py-10 bg-white">
-        <div className="container px-4 mx-auto">
-          <div className="mx-auto max-w-7xl">
-            <div className="mb-12 md:mb-16 text-center">
-              <div className="flex items-center justify-center gap-2 md:gap-3 mb-4 md:mb-6">
-                <img className="w-5 h-4 md:w-6 md:h-5" alt="Component" src="/component-1-11.svg" />
-                <span className="text-xl md:text-2xl font-bold tracking-widest text-everefficientlkcerulean-blue">
-                  FAQ'S
-                </span>
-              </div>
-              <div className="w-20 md:w-24 h-0.5 bg-everefficientlkcerulean-blue mx-auto mb-6 md:mb-8"></div>
-
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-                <span className="text-everefficientlkmirage">General </span>
-                <span className="text-everefficientlkcerulean-blue">
-                  Frequently
-                  <br className="hidden md:block" />
-                </span>
-                <span className="text-everefficientlkmirage">
-                  Asked Questions
-                </span>
-              </h2>
+      
+    <section className="py-8 md:py-10 bg-white">
+      <div className="container px-4 mx-auto">
+        <div className="mx-auto max-w-7xl">
+          {/* Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="mb-12 md:mb-16 text-center"
+          >
+            <div className="flex items-center justify-center gap-2 md:gap-3 mb-4 md:mb-6">
+              <img className="w-5 h-4 md:w-6 md:h-5" alt="Component" src="/component-1-11.svg" />
+              <span className="text-xl md:text-2xl font-bold tracking-widest text-everefficientlkcerulean-blue">
+                FAQ'S
+              </span>
             </div>
+            <div className="w-20 md:w-24 h-0.5 bg-everefficientlkcerulean-blue mx-auto mb-6 md:mb-8"></div>
 
-            <div className="grid grid-cols-1 gap-4 md:gap-6 lg:grid-cols-2">
-              {faqItems.map((faq) => (
-                <Accordion key={faq.id} type="single" collapsible className="w-full">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+              <span className="text-everefficientlkmirage">General </span>
+              <span className="text-everefficientlkcerulean-blue">
+                Frequently
+                <br className="hidden md:block" />
+              </span>
+              <span className="text-everefficientlkmirage">
+                Asked Questions
+              </span>
+            </h2>
+          </motion.div>
+
+          {/* FAQ Grid */}
+          <div className="grid grid-cols-1 gap-4 md:gap-6 lg:grid-cols-2">
+            {faqItems.map((faq, index) => (
+              <motion.div
+                key={faq.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.15 }}
+                viewport={{ once: true }}
+              >
+                <Accordion type="single" collapsible className="w-full">
                   <AccordionItem value={faq.id} className="border-none">
                     <Card className="bg-everefficientlkwhite rounded-[20px_20px_20px_0px] md:rounded-[30px_30px_30px_0px] overflow-hidden shadow-[0px_0px_30px_5px_#0000000d] md:shadow-[0px_0px_40px_5px_#0000000d] hover:shadow-[0px_0px_40px_10px_#0000001a] md:hover:shadow-[0px_0px_50px_10px_#0000001a] transition-all duration-300">
                       <AccordionTrigger className="px-4 py-4 md:px-6 md:py-6 hover:no-underline">
@@ -455,11 +471,12 @@ export const ElementLight = (): JSX.Element => {
                     </Card>
                   </AccordionItem>
                 </Accordion>
-              ))}
-            </div>
+              </motion.div>
+            ))}
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
       <BackgroundSection />
       <FooterSection />
