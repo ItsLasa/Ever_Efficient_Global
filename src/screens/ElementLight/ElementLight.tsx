@@ -163,8 +163,8 @@ export const ElementLight = (): JSX.Element => {
   // Thumbnail images data
   const thumbnails = [
     { url: "/thumb.png", id: "thumb-1" },
-    { url: "/thumb-2.png", id: "thumb-3" },
-    { url: "/thumb-3.png", id: "thumb-4" },
+    // { url: "/thumb-2.png", id: "thumb-3" },
+    // { url: "/thumb-3.png", id: "thumb-4" },
     { url: "/designstudiohub.png", id: "thumb-5" },
     { url: "/edirisingha-homes.png", id: "thumb-6" },
     { url: "/hnr.png", id: "thumb-7" },
