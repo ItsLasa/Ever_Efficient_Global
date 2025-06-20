@@ -3,7 +3,7 @@ import { Button } from "../../../../components/ui/button";
 import { DividerSection } from "../../../ElementLight/sections/DividerSection";
 import { Separator } from "@radix-ui/react-separator";
 import SpiderWeb from "../../../../components/ui/SpiderWeb";
-
+import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -113,31 +113,30 @@ export const AboutSection = (): JSX.Element => {
       </section>
 
       {/* Our Story Section */}
-      <section className="py-12 md:py-16 lg:py-20 mt-10 bg-white">
+      <section className="py-12 md:py-16 lg:py-20 mt-16 bg-white">
         <div className="container px-4 mx-auto">
           <div className="grid items-center grid-cols-1 gap-8 md:gap-12 mx-auto lg:grid-cols-2 max-w-7xl">
             {/* Images Column */}
-            <div className="space-y-4 md:space-y-6">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="space-y-4 md:space-y-6"
+            >
               <div className="grid grid-cols-2 gap-4 md:gap-6">
                 <div
                   className="h-64 sm:h-80 md:h-96 rounded-[50px_50px_0px_50px] md:rounded-[80px_80px_0px_80px] bg-cover bg-center"
-                  style={{
-                    backgroundImage: "url(/digital-strategy-team-meeting.png)",
-                  }}
+                  style={{ backgroundImage: "url(/digital-strategy-team-meeting.png)" }}
                 />
                 <div className="space-y-4 md:space-y-6">
                   <div
                     className="h-32 sm:h-40 md:h-44 rounded-full border-2 border-dashed border-[#275ba8] bg-cover bg-center"
-                    style={{
-                      backgroundImage:
-                        "url(/presenting-digital-solutions-to-clients.png)",
-                    }}
+                    style={{ backgroundImage: "url(/presenting-digital-solutions-to-clients.png)" }}
                   />
                   <div
                     className="h-32 sm:h-40 md:h-44 rounded-[0px_50px_50px_50px] md:rounded-[0px_80px_80px_80px] bg-cover bg-center"
-                    style={{
-                      backgroundImage: "url(/our-team-analyzing-data.png)",
-                    }}
+                    style={{ backgroundImage: "url(/our-team-analyzing-data.png)" }}
                   />
                 </div>
               </div>
@@ -150,19 +149,21 @@ export const AboutSection = (): JSX.Element => {
                     />
                   </div>
                   <div className="text-everefficientlkwhite">
-                    <div className="text-base md:text-lg font-bold">
-                      9+ Years Of
-                    </div>
-                    <div className="text-base md:text-lg font-bold">
-                      Digital Excellence
-                    </div>
+                    <div className="text-base md:text-lg font-bold">9+ Years Of</div>
+                    <div className="text-base md:text-lg font-bold">Digital Excellence</div>
                   </div>
                 </CardContent>
               </Card>
-            </div>
+            </motion.div>
 
             {/* Content Column */}
-            <div className="space-y-6 md:space-y-8">
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="space-y-6 md:space-y-8"
+            >
               <div className="space-y-3 md:space-y-4">
                 <div className="flex items-center gap-2 md:gap-3">
                   <img
@@ -178,32 +179,21 @@ export const AboutSection = (): JSX.Element => {
               </div>
               <div>
                 <h2 className="mb-4 md:mb-6 text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-bold leading-tight">
-                  <span className="text-everefficientlkmirage">
-                    Pioneering{" "}
-                  </span>
+                  <span className="text-everefficientlkmirage">Pioneering </span>
                   <span className="text-everefficientlkcerulean-blue">
-                    Digital
-                    <br />
-                    Transformation
+                    Digital<br />Transformation
                   </span>
                   <span className="text-everefficientlkmirage">
-                    {" "}
-                    Since
-                    <br />
-                    2015
+                    {' '}Since<br />2015
                   </span>
                 </h2>
                 <p className="text-base md:text-lg leading-relaxed text-zinc-600">
-                  Ever Efficient emerged from a vision to bridge the gap between
-                  traditional business practices and the digital revolution.
-                  What began as a small consulting firm has grown into a full
-                  service digital management agency, helping hundreds of
-                  businesses achieve measurable success.
+                  Ever Efficient emerged from a vision to bridge the gap between traditional business practices and the digital revolution. What began as a small consulting firm has grown into a full service digital management agency, helping hundreds of businesses achieve measurable success.
                 </p>
               </div>
-              <div className="">
+              <div>
                 <div className="flex flex-col items-center justify-start gap-4 md:gap-6 sm:flex-row">
-                  <Button className="bg-[#275ba8] hover:bg-[#1e4a8c] rounded-[40px_40px_40px_0px] md:rounded-[50px_50px_50px_0px] h-12 md:h-14 px-6 md:px-8 shadow-[0px_0px_30px_5px_#0000000d] md:shadow-[0px_0px_40px_5px_#0000000d]">
+                  <Button className="bg-[#275ba8]  hover:bg-[#1e4a8c] rounded-[40px_40px_40px_0px] md:rounded-[50px_50px_50px_0px] h-12 md:h-14 px-6 md:px-8 shadow-[0px_0px_30px_5px_#0000000d] md:shadow-[0px_0px_40px_5px_#0000000d]">
                     <span className="text-xs md:text-sm tracking-[0.14px] leading-[25.2px]">
                       Our Services
                     </span>
@@ -213,7 +203,7 @@ export const AboutSection = (): JSX.Element => {
                       src="/component-1-37.svg"
                     />
                   </Button>
-                  <div className="flex items-center gap-3 md:gap-4">
+                  <div className="flex items-center mt-2 gap-3 md:gap-4">
                     <div className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 bg-everefficientlkblack rounded-full shadow-[-5px_5px_0px_#116e6317]">
                       <img
                         className="w-5 h-5 md:w-6 md:h-6"
@@ -232,7 +222,7 @@ export const AboutSection = (): JSX.Element => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
