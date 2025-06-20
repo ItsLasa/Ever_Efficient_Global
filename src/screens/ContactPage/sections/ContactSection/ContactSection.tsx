@@ -14,9 +14,9 @@ export const ContactSection = (): JSX.Element => {
       gradientTo: "to-blue-200",
       content: (
         <>
-          No.15/1/C, 2nd Floor, Edirisinghe Tower,
+          315B ANG MO KIO STREET 31,#03-317,
           <br />
-          New Digana Road, Kundasale, Kandy
+         TECK GHEE VISTA, SINGAPORE 563315
         </>
       ),
     },

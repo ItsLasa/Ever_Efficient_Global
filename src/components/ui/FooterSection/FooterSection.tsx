@@ -27,7 +27,7 @@ const contactInfo = [
   },
   {
     icon: <MapPinIcon className="w-3 h-4 text-gray-200" />,
-    text: "No.15/I/C, 2nd Floor, Edirisinghe Tower,New Digana Road, Kundasale, Kandy",
+    text: "315B ANG MO KIO STREET 31,#03-317,TECK GHEE VISTA, SINGAPORE 563315",
     url: null,
   },
   {
