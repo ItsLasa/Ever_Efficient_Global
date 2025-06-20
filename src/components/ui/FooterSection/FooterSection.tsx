@@ -22,19 +22,19 @@ const quickLinks = [
 // Data for contact information
 const contactInfo = [
   {
-    icon: <PhoneIcon className="w-4 h-4" />,
+    icon: <PhoneIcon className="w-4 h-4 text-gray-200" />,
     text: "+94 777 644 590",
     url: null,
   },
   {
-    icon: <MapPinIcon className="w-3 h-4" />,
+    icon: <MapPinIcon className="w-3 h-4 text-gray-200" />,
     text: "No.15/I/C, 2nd Floor, Edirisinghe Tower,New Digana Road, Kundasale, Kandy",
     url: null,
   },
   {
-    icon: <MailIcon className="w-4 h-4" />,
+    icon: <MailIcon className="w-4 h-4 text-gray-200" />,
     text: "Everefficient.Official@gmail.com",
-    url: "https://everefficient.lk/index.html",
+    url: "mailto:Everefficient.Official@gmail.com",
   },
 ];
 
