@@ -23,7 +23,7 @@ export const HeaderSection = (): JSX.Element => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+      if (currentScrollY > lastScrollY && currentScrollY > 0.1) {
         setShowHeader(false); // scrolling down
       } else {
         setShowHeader(true); // scrolling up
