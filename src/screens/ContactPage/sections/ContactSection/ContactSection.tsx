@@ -1,9 +1,47 @@
 import SpiderWeb from "../../../../components/ui/SpiderWeb";
+import { motion } from "framer-motion";
+import { Card, CardContent } from "./../../../../components/ui/card";
+import { Mail, MapPin, Phone } from "lucide-react";
 
 export const ContactSection = (): JSX.Element => {
+  const contactInfo = [
+    {
+      id: 1,
+      title: "Office Address",
+      icon: <MapPin className="w-6 h-6 text-blue-600" />,
+      ringColor: "ring-blue-300",
+      gradientFrom: "from-blue-100",
+      gradientTo: "to-blue-200",
+      content: (
+        <>
+          No.15/1/C, 2nd Floor, Edirisinghe Tower,
+          <br />
+          New Digana Road, Kundasale, Kandy
+        </>
+      ),
+    },
+    {
+      id: 2,
+      title: "Call Us",
+      icon:<Phone className="w-6 h-6 text-green-600" />,
+      ringColor: "ring-green-300",
+      gradientFrom: "from-green-100",
+      gradientTo: "to-green-200",
+      content: "+94 777 644 590",
+    },
+    {
+      id: 3,
+      title: "Email Us",
+      icon: <Mail className="w-6 h-6 text-pink-600" />,
+      ringColor: "ring-pink-300",
+      gradientFrom: "from-pink-100",
+      gradientTo: "to-pink-200",
+      content: "everefficient.official@gmail.com",
+    },
+  ];
   return (
     <div className="relative w-full bg-everefficientlkwhite">
-      <section className="relative w-full h-[400px] bg-black overflow-hidden flex items-center justify-center">
+      <section className="relative w-full h-[400px] bg-[black]  overflow-hidden  flex items-center justify-center">
         <a href="#about" className="absolute inset-0 z-0 block">
           {/* <div className="flex w-full h-full">
             <SpiderWeb />
@@ -13,13 +51,11 @@ export const ContactSection = (): JSX.Element => {
           <h1 className="text-everefficientlkwhite font-everefficient-lk-semantic-heading-2-title text-[40.25px] leading-[45px] font-bold">
             Contact Us
           </h1>
-          <div className="mt-4 flex items-center justify-center gap-[29.45px]">
+          {/* <div className="mt-4 flex items-center justify-center gap-[29.45px]">
             <div className="flex items-center">
               <a
                 className="text-everefficientlkwhite font-everefficient-lk-inter-medium-title whitespace-nowrap"
-                href="https://everefficient.lk/index.html"
-                target="_blank"
-                rel="noopener noreferrer"
+              
               >
                 Home
               </a>
@@ -32,44 +68,41 @@ export const ContactSection = (): JSX.Element => {
             <span className="text-everefficientlkcerulean-blue font-everefficient-lk-semantic-item-title whitespace-nowrap">
               Contact Us
             </span>
-          </div>
+          </div> */}
         </div>
       </section>
 
-      <div className="grid gap-6 px-6 py-8 md:grid-cols-3">
-        {/* Card 1 */}
-        <div className="py-6 text-center transition duration-500 transform bg-white shadow-md rounded-xl hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-blue-300 animate-fade-in-up group">
-          <div className="flex items-center justify-center mx-auto text-4xl rounded-full w-14 h-14 bg-gradient-to-br from-blue-100 to-blue-200 group-hover:animate-pulse">
-            🏢
-          </div>
-          <h3 className="mt-4 text-lg font-semibold">Office Address</h3>
-          <p className="mt-1 text-sm text-gray-600">
-            No.15/1/C, 2nd Floor, Edirisinghe Tower,
-            <br />
-            New Digana Road, Kundasale, Kandy
-          </p>
-        </div>
-
-        {/* Card 2 */}
-        <div className="py-6 text-center transition duration-500 delay-100 transform bg-white shadow-md rounded-xl hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-green-300 animate-fade-in-up group">
-          <div className="flex items-center justify-center mx-auto text-4xl rounded-full w-14 h-14 bg-gradient-to-br from-green-100 to-green-200 group-hover:animate-pulse">
-            📞
-          </div>
-          <h3 className="mt-4 text-lg font-semibold">Call Us</h3>
-          <p className="mt-1 text-sm text-gray-600">+94 777 644 590</p>
-        </div>
-
-        {/* Card 3 */}
-        <div className="py-6 text-center transition duration-500 delay-200 transform bg-white shadow-md rounded-xl hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-pink-300 animate-fade-in-up group">
-          <div className="flex items-center justify-center mx-auto text-4xl rounded-full w-14 h-14 bg-gradient-to-br from-pink-100 to-pink-200 group-hover:animate-pulse">
-            ✉️
-          </div>
-          <h3 className="mt-4 text-lg font-semibold">Email Us</h3>
-          <p className="mt-1 text-sm text-gray-600">
-            everefficient.official@gmail.com
-          </p>
+      <section className="py-16 px-4 bg-gradient-to-b mt-10 from-gray-50 to-white">
+      <div className="max-w-6xl mx-auto text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">Get in Touch</h2>
+        <p className="text-gray-600 mb-12">
+          We're here to help and answer any question you might have.
+        </p>
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {contactInfo.map((item, index) => (
+            <motion.div
+              key={item.id}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+            >
+              <Card className={`group p-6 text-center transition-transform duration-300 transform hover:scale-105 shadow-md hover:shadow-2xl hover:ring-2 ${item.ringColor} rounded-2xl`}>
+                <CardContent>
+                  <div
+                    className={`mx-auto mb-4 flex items-center justify-center w-16 h-16 text-4xl rounded-full bg-gradient-to-br ${item.gradientFrom} ${item.gradientTo} group-hover:animate-pulse`}
+                  >
+                    {item.icon}
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
+                  <p className="text-sm text-gray-600">{item.content}</p>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
         </div>
       </div>
+    </section>
 
       <div className="flex items-center justify-center min-h-screen px-4 py-10 bg-gray-50">
         <div className="grid w-full max-w-6xl grid-cols-1 overflow-hidden bg-white shadow-xl rounded-2xl md:grid-cols-2">
