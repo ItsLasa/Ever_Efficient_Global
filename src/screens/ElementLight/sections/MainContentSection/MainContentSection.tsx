@@ -120,7 +120,7 @@ export const MainContentSection = (): JSX.Element => {
                   : service.id === 2
                   ? "left-[193px]"
                   : "left-auto"
-              } bg-everefficientlkcerulean-blue/90 backdrop-blur-md rounded-[40px_40px_40px_0px] shadow-md flex items-center px-4 py-2`}
+              } bg-zinc-900 backdrop-blur-md rounded-[40px_40px_40px_0px] shadow-md flex items-center px-4 py-2`}
             >
               <img className="w-4 h-4" alt="Icon" src={service.badge.icon} />
               <span className="ml-2 text-everefficientlkwhite font-medium text-[14px] tracking-wide">
