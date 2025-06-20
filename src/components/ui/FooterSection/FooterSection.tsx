@@ -45,7 +45,7 @@ export const FooterSection = (): JSX.Element => {
       <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
         {/* Company Info Section */}
         <div className="flex flex-col space-y-4">
-          <div className="w-[180px] h-[45px] bg-[url(/ever-efficient-logo-1.png)] bg-cover bg-center" />
+          <div className="w-[180px] h-[45px] bg-[url(/resize.png)] bg-cover bg-center" />
           <p className="text-sm leading-relaxed text-everefficientlkwhite">
             Transform your business with cutting-edge digital strategies and
             efficient management solutions
