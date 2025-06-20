@@ -81,9 +81,9 @@ export const AboutSection = (): JSX.Element => {
       {/* Hero Banner Section */}
       <section className="relative w-full h-[300px] sm:h-[350px] md:h-[400px] bg-black overflow-hidden flex items-center justify-center">
         <a href="#about" className="absolute inset-0 z-0 block">
-          <div className="relative w-full min-h-screen overflow-hidden">
+          {/* <div className="relative w-full  min-h-screen overflow-hidden">
             <SpiderWeb />
-          </div>
+          </div> */}
         </a>
         <div className="relative z-10 text-center px-4 max-w-[1200px]">
           <h1 className="text-everefficientlkwhite text-3xl sm:text-4xl md:text-[40px] leading-[1.2] font-bold">
