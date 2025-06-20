@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { motion } from "framer-motion"
+import { InfiniteSlider } from "../../../../components/ui/infinite-slider";
 
 // Testimonial data for mapping
 const testimonials = [
@@ -68,6 +69,7 @@ export const BackgroundSection = (): JSX.Element => {
 
         {/* Testimonial cards */}
         <div className="flex justify-center gap-[22px] w-full py-1.5">
+
           {testimonials.map((testimonial) => (
             <motion.div
             initial={{ x: -100, opacity: 0 }}
@@ -136,8 +138,11 @@ export const BackgroundSection = (): JSX.Element => {
             </Card>
           </motion.div>
           ))}
+              
         </div>
+  
       </div>
+   
     </section>
   );
 };
