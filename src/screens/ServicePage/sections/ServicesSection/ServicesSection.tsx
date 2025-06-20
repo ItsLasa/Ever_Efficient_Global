@@ -260,7 +260,7 @@ export const ServicesSection = (): JSX.Element => {
                 </div>
 
                 {/* Description */}
-                <p className="text-[15px] md:text-[16.5px] leading-[26px] text-everefficientlkslate-gray font-light">
+                <p className="text-[15px] md:text-[16.5px] leading-[26px] text-zinc-500 font-normal">
                   {service.description}
                 </p>
 
@@ -278,15 +278,13 @@ export const ServicesSection = (): JSX.Element => {
                 </div>
 
                 {/* CTA Button */}
-                <div className="pt-4">
+                {/* <div className="pt-4">
                   <Button
                     className="h-[50px] bg-[#275ba8] hover:bg-[#1e4a8a] rounded-[50px_50px_50px_0px] shadow-md transition-all duration-300"
                     asChild
                   >
                     <a
-                      href={service.ctaLink}
-                      rel="noopener noreferrer"
-                      target="_blank"
+                      
                       className="flex items-center px-6"
                     >
                       <span className="text-white text-sm font-medium tracking-[1px]">
@@ -295,7 +293,7 @@ export const ServicesSection = (): JSX.Element => {
                       <ArrowRightIcon className="ml-2 w-[15px] h-[15px]" />
                     </a>
                   </Button>
-                </div>
+                </div> */}
               </div>
 
               {/* Right Image */}
