@@ -186,7 +186,7 @@ export const ServicesSection = (): JSX.Element => {
         className="relative w-full h-[400px] bg-black overflow-hidden flex items-center justify-center"
       >
         <a href="#about" className="absolute inset-0 z-0 block">
-          <div className="relative w-full min-h-screen overflow-hidden">
+          <div className="flex w-full h-full">
             <SpiderWeb />
           </div>
         </a>
