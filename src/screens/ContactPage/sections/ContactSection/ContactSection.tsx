@@ -104,60 +104,75 @@ export const ContactSection = (): JSX.Element => {
       </div>
     </section>
 
-      <div className="flex items-center justify-center min-h-screen px-4 py-10 bg-gray-50">
-        <div className="grid w-full max-w-6xl grid-cols-1 overflow-hidden bg-white shadow-xl rounded-2xl md:grid-cols-2">
-          {/* Left Image Section */}
-          <div className="flex items-center justify-center bg-gray-100">
-            <img
-              src="/about-bg5.jpg"
-              alt="Office"
-              className="object-cover w-full h-full max-h-[700px] rounded-none md:rounded-l-2xl"
-            />
-          </div>
+    <div className="flex items-center justify-center min-h-screen px-4 py-10 bg-gray-50">
+  <div className="grid w-full max-w-6xl grid-cols-1 overflow-hidden bg-white shadow-xl rounded-2xl md:grid-cols-2">
+    {/* Left Image Section */}
+    <div className="flex items-center justify-center bg-gray-100">
+      <img
+        src="/about-bg5.jpg"
+        alt="Office"
+        className="object-cover w-full h-full max-h-[700px] rounded-none md:rounded-l-2xl"
+      />
+    </div>
 
-          {/* Right Contact Form */}
-          <div className="p-8 md:p-10">
-            <h2 className="mb-4 text-3xl font-bold text-gray-800">
-              Contact Us
-            </h2>
-            <p className="mb-6 text-sm text-gray-600">
-              We’d love to hear from you! Fill out the form below and we'll get
-              back to you soon.
-            </p>
+    {/* Right Contact Form */}
+    <div className="p-8 md:p-10">
+      <h2 className="mb-4 text-3xl font-bold text-gray-800">
+        Contact Us
+      </h2>
+      <p className="mb-6 text-sm text-gray-600">
+        We'd love to hear from you! Fill out the form below and we'll get
+        back to you soon.
+      </p>
 
-            <form className="space-y-5">
-              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                <input
-                  type="text"
-                  placeholder="Your Name"
-                  className="w-full px-4 py-3 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                />
-                <input
-                  type="email"
-                  placeholder="Your Email"
-                  className="w-full px-4 py-3 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                />
-              </div>
-              <input
-                type="text"
-                placeholder="Subject"
-                className="w-full px-4 py-3 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
-              />
-              <textarea
-                rows="5"
-                placeholder="Write your message..."
-                className="w-full px-4 py-3 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
-              ></textarea>
-              <button
-                type="submit"
-                className="w-full py-3 text-sm font-semibold text-white transition duration-300 bg-blue-600 rounded-lg hover:bg-blue-700"
-              >
-                Send Message
-              </button>
-            </form>
-          </div>
+
+      <form 
+        action="https://formspree.io/f/mdkzleqk" 
+        method="POST"
+        className="space-y-5"
+      >
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            className="w-full px-4 py-3 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            className="w-full px-4 py-3 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            required
+          />
         </div>
-      </div>
+        <input
+          type="text"
+          name="subject"
+          placeholder="Subject"
+          className="w-full px-4 py-3 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+          required
+        />
+        <textarea
+          rows="5"
+          name="message"
+          placeholder="Write your message..."
+          className="w-full px-4 py-3 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+          required
+        ></textarea>
+        <button
+          type="submit"
+          className="w-full py-3 text-sm font-semibold text-white transition duration-300 bg-blue-600 rounded-lg hover:bg-blue-700"
+        >
+          Send Message
+        </button>
+      </form>
+
+      
+    </div>
+  </div>
+</div>
 
       {/* <div className="w-full h-[400px]">
         <iframe
