@@ -79,7 +79,7 @@ export const AboutSection = (): JSX.Element => {
   return (
     <div className="relative w-full bg-everefficientlkwhite overflow-x-hidden">
       {/* Hero Banner Section */}
-      <section className="relative w-full h-[300px] sm:h-[350px] md:h-[400px] bg-black overflow-hidden flex items-center justify-center">
+      <section className="relative w-full h-[300px] sm:h-[350px] md:h-[400px] hidden bg-black overflow-hidden flex items-center justify-center">
         <a href="#about" className="absolute inset-0 z-0 block">
           {/* <div className="relative w-full  min-h-screen overflow-hidden">
             <SpiderWeb />
@@ -113,7 +113,7 @@ export const AboutSection = (): JSX.Element => {
       </section>
 
       {/* Our Story Section */}
-      <section className="py-12 md:py-16 lg:py-20 bg-white">
+      <section className="py-12 md:py-16 lg:py-20 mt-10 bg-white">
         <div className="container px-4 mx-auto">
           <div className="grid items-center grid-cols-1 gap-8 md:gap-12 mx-auto lg:grid-cols-2 max-w-7xl">
             {/* Images Column */}
