@@ -62,7 +62,7 @@ export const OverlapGroupSection = (): JSX.Element => {
               className="flex-1"
             >
               <div className="mb-6">
-                <h2 className="[font-family:'Inter',Helvetica] font-normal text-[49.4px] leading-[55px]">
+                <h2 className="[font-family:'Inter',Helvetica] font-semibold text-[49.4px] leading-[55px]">
                   <span className="text-white">Why Businesses</span>
                   <br />
                   <span className="text-everefficientlkcerulean-blue">
@@ -70,7 +70,7 @@ export const OverlapGroupSection = (): JSX.Element => {
                   </span>
                 </h2>
               </div>
-              <div className="max-w-[551px] mb-10 [font-family:'Inter',Helvetica] font-normal text-everefficientlkwhite text-[15.8px] tracking-[0] leading-[28.8px]">
+              <div className="max-w-[551px] mb-10 [font-family:'Inter',Helvetica] font-normal text-everefficientlkwhite text-[16.8px] tracking-[0] leading-[28.8px]">
                 At Ever Efficient, we combine strategic thinking with digital
                 expertise to deliver solutions that drive real business growth
                 and measurable results.
