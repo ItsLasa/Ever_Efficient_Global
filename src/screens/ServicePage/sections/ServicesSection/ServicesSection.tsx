@@ -229,7 +229,7 @@ export const ServicesSection = (): JSX.Element => {
             service.hasBg ? "bg-everefficientlkathens-gray" : "bg-white"
           }`}
         >
-          <div className="max-w-[1200px] w-full rounded-3xl overflow-hidden shadow-sm">
+          <div className="max-w-[1200px] w-full rounded-3xl overflow-hidden ">
             <div className="flex flex-col items-center gap-10 md:flex-row">
               {/* Left Content */}
               <div className="flex-1 w-full px-4 space-y-6">
