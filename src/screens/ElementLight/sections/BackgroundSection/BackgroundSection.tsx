@@ -62,12 +62,12 @@ export const BackgroundSection = (): JSX.Element => {
             </div>
           </div>
 
-          <h2 className="text-[50.2px] text-center font-['Inter',Helvetica] font-normal mb-6">
+          <h2 className="text-[50.2px] text-center font-['Inter',Helvetica] font-semibold mb-6">
             <span className="text-white leading-[55px]">What Our Clients </span>
             <span className="text-[#275ba8] leading-[55px]">Say</span>
           </h2>
 
-          <p className="text-everefficientlkwhite text-[16.9px] text-center leading-[28.8px] max-w-[551px] font-['Inter',Helvetica] font-normal">
+          <p className="text-everefficientlkwhite text-[18.9px] text-center leading-[28.8px] max-w-[551px] font-['Inter',Helvetica] font-normal">
             Hear how we've helped businesses achieve digital transformation and
             growth.
           </p>
