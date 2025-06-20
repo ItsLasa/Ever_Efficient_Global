@@ -29,7 +29,7 @@ const serviceCards = [
       "Build authentic brand connections through tailored content strategies and community engagement across all platforms.",
     image: "/social-media-management.png",
     rating: 5.0,
-    features: [{ icon: "#", text: "Multi-Platform" }],
+    features: [{ icon: "/component-1-66.svg", text: "Multi-Platform" }],
     details: [
       { icon: "/component-1-12.svg", text: "Audience Growth" },
       { icon: "/component-1-1.svg", text: "Monthly Plans" },
