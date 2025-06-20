@@ -5,35 +5,30 @@ import { Separator } from '@radix-ui/react-separator';
 import SpiderWeb from '../../../../components/ui/SpiderWeb';
 
 export const AboutSection = (): JSX.Element => {
-
   const features = [
     {
       icon: '🛡️',
       number: '1',
       title: 'Integrity',
-      description:
-        'We maintain the highest standards of honesty and transparency in all our dealings.',
+      description: 'We maintain the highest standards of honesty and transparency in all our dealings.',
     },
     {
       icon: '💡',
       number: '2',
       title: 'Innovation',
-      description:
-        'We constantly evolve and adapt to bring the latest solutions to our clients.',
+      description: 'We constantly evolve and adapt to bring the latest solutions to our clients.',
     },
     {
       icon: '🫱🏻‍🫲🏽',
       number: '3',
       title: 'Collaboration',
-      description:
-        'We believe in working together to achieve exceptional results.',
+      description: 'We believe in working together to achieve exceptional results.',
     },
     {
       icon: '📈',
       number: '4',
       title: 'Excellence',
-      description:
-        'We strive for excellence in everything we do.',
+      description: 'We strive for excellence in everything we do.',
     },
   ];
 
@@ -42,52 +37,49 @@ export const AboutSection = (): JSX.Element => {
       id: 1,
       name: "Kumara Sahan",
       role: "Business Owner",
-      quote:
-        "\"What sets Ever Efficient apart is their strategic approach. They don't just execute tasks",
+      quote: "\"What sets Ever Efficient apart is their strategic approach. They don't just execute tasks",
       image: "/kumara-sahan.png",
     },
     {
       id: 2,
       name: "Rajiv Fernando",
       role: "Business Owner",
-      quote:
-        '"Ever Efficient transformed our online presence completely. Our website traffic increased',
+      quote: '"Ever Efficient transformed our online presence completely. Our website traffic increased',
       image: "/rajiv-fernando.png",
     },
     {
       id: 3,
       name: "Priyanka De Silva",
       role: "Business Owner",
-      quote:
-        '"Their social media strategy took our engagement from 200 to 15,000+ followers in one',
+      quote: '"Their social media strategy took our engagement from 200 to 15,000+ followers in one',
       image: "/priyanka-de-silva.png",
     },
     {
       id: 4,
       name: "Dinesh Perera",
       role: "Business Owner",
-      quote:
-        '"The professional photography and video content they created became the cornerstone of o',
+      quote: '"The professional photography and video content they created became the cornerstone of o',
       image: "/dinesh-perera.png",
     },
   ];
 
   return (
-    <div className="relative w-full bg-everefficientlkwhite">
-      <section className="relative w-full h-[400px] bg-black overflow-hidden flex items-center justify-center">
+    <div className="relative w-full bg-everefficientlkwhite overflow-x-hidden">
+      {/* Hero Banner Section */}
+      <section className="relative w-full h-[300px] sm:h-[350px] md:h-[400px] bg-black overflow-hidden flex items-center justify-center">
         <a href="#about" className="absolute inset-0 z-0 block">
           <div className="flex w-full h-full">
             <SpiderWeb />
           </div>
         </a>
-        <div className="relative z-10 text-center px-3 max-w-[1200px]">
-          <h1 className="text-everefficientlkwhite font-everefficient-lk-semantic-heading-2-title text-[40.25px] leading-[45px] font-bold">
+        <div className="relative z-10 text-center px-4 max-w-[1200px]">
+          <h1 className="text-everefficientlkwhite text-3xl sm:text-4xl md:text-[40px] leading-[1.2] font-bold">
             About Us
           </h1>
-          <div className="mt-4 flex items-center justify-center gap-[29.45px]">
+          <div className="mt-3 sm:mt-4 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-[29px]">
             <div className="flex items-center">
               <a
-                className="text-everefficientlkwhite font-everefficient-lk-inter-medium-title whitespace-nowrap"
+                className="text-everefficientlkwhite whitespace-nowrap text-sm sm:text-base"
                 href="https://everefficient.lk/index.html"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -95,74 +87,73 @@ export const AboutSection = (): JSX.Element => {
                 Home
               </a>
               <img
-                className="w-4 h-[28.8px] ml-2"
+                className="w-3 h-5 sm:w-4 sm:h-[28px] ml-2"
                 alt="Separator"
                 src="/component-1-2-8.svg"
               />
             </div>
-            <span className="text-everefficientlkcerulean-blue font-everefficient-lk-semantic-item-title whitespace-nowrap">
+            <span className="text-everefficientlkcerulean-blue whitespace-nowrap text-sm sm:text-base">
               About Us
             </span>
           </div>
         </div>
       </section>
       
-      <section className="py-20 bg-white">
+      {/* Our Story Section */}
+      <section className="py-12 md:py-16 lg:py-20 bg-white">
         <div className="container px-4 mx-auto">
-          <div className="grid items-center grid-cols-1 gap-12 mx-auto lg:grid-cols-2 max-w-7xl">
-            <div className="space-y-6">
-              <div className="grid grid-cols-2 gap-6">
+          <div className="grid items-center grid-cols-1 gap-8 md:gap-12 mx-auto lg:grid-cols-2 max-w-7xl">
+            {/* Images Column */}
+            <div className="space-y-4 md:space-y-6">
+              <div className="grid grid-cols-2 gap-4 md:gap-6">
                 <div
-                  className="h-96 rounded-[80px_80px_0px_80px] bg-cover bg-center"
-                  style={{
-                    backgroundImage: "url(/digital-strategy-team-meeting.png)",
-                  }}
+                  className="h-64 sm:h-80 md:h-96 rounded-[50px_50px_0px_50px] md:rounded-[80px_80px_0px_80px] bg-cover bg-center"
+                  style={{ backgroundImage: "url(/digital-strategy-team-meeting.png)" }}
                 />
-                <div className="space-y-6">
+                <div className="space-y-4 md:space-y-6">
                   <div
-                    className="h-44 rounded-full border-2 border-dashed border-[#275ba8] bg-cover bg-center"
-                    style={{
-                      backgroundImage:
-                        "url(/presenting-digital-solutions-to-clients.png)",
-                    }}
+                    className="h-32 sm:h-40 md:h-44 rounded-full border-2 border-dashed border-[#275ba8] bg-cover bg-center"
+                    style={{ backgroundImage: "url(/presenting-digital-solutions-to-clients.png)" }}
                   />
                   <div
-                    className="h-44 rounded-[0px_80px_80px_80px] bg-cover bg-center"
+                    className="h-32 sm:h-40 md:h-44 rounded-[0px_50px_50px_50px] md:rounded-[0px_80px_80px_80px] bg-cover bg-center"
                     style={{ backgroundImage: "url(/our-team-analyzing-data.png)" }}
                   />
                 </div>
               </div>
-              <Card className="bg-everefficientlkcerulean-blue rounded-[50px_50px_50px_0px] p-6 shadow-[0px_0px_40px_5px_#0000001a]">
-                <CardContent className="flex items-center gap-4 p-0">
-                  <div className="flex items-center justify-center w-20 h-20 rounded-full bg-everefficientlkwhite">
+              <Card className="bg-everefficientlkcerulean-blue rounded-[40px_40px_40px_0px] md:rounded-[50px_50px_50px_0px] p-4 md:p-6 shadow-[0px_0px_30px_5px_#0000001a] md:shadow-[0px_0px_40px_5px_#0000001a]">
+                <CardContent className="flex items-center gap-3 md:gap-4 p-0">
+                  <div className="flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-everefficientlkwhite">
                     <div
-                      className="w-12 h-12 bg-center bg-cover"
+                      className="w-10 h-10 md:w-12 md:h-12 bg-center bg-cover"
                       style={{ backgroundImage: "url(/analytics-icon.png)" }}
                     />
                   </div>
                   <div className="text-everefficientlkwhite">
-                    <div className="text-lg font-bold">9+ Years Of</div>
-                    <div className="text-lg font-bold">Digital Excellence</div>
+                    <div className="text-base md:text-lg font-bold">9+ Years Of</div>
+                    <div className="text-base md:text-lg font-bold">Digital Excellence</div>
                   </div>
                 </CardContent>
               </Card>
             </div>
-            <div className="space-y-8">
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
+            
+            {/* Content Column */}
+            <div className="space-y-6 md:space-y-8">
+              <div className="space-y-3 md:space-y-4">
+                <div className="flex items-center gap-2 md:gap-3">
                   <img
-                    className="h-5 w-7"
+                    className="h-4 w-5 md:h-5 md:w-7"
                     alt="Component"
                     src="/component-1-66.svg"
                   />
-                  <span className="text-lg font-bold tracking-widest text-everefficientlkcerulean-blue">
+                  <span className="text-base md:text-lg font-bold tracking-widest text-everefficientlkcerulean-blue">
                     OUR STORY
                   </span>
                 </div>
-                <div className="w-32 h-0.5 bg-everefficientlkcerulean-blue"></div>
+                <div className="w-24 md:w-32 h-0.5 bg-everefficientlkcerulean-blue"></div>
               </div>
               <div>
-                <h2 className="mb-6 text-5xl font-bold leading-tight lg:text-6xl">
+                <h2 className="mb-4 md:mb-6 text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-bold leading-tight">
                   <span className="text-everefficientlkmirage">Pioneering </span>
                   <span className="text-everefficientlkcerulean-blue">
                     Digital
@@ -176,7 +167,7 @@ export const AboutSection = (): JSX.Element => {
                     2015
                   </span>
                 </h2>
-                <p className="text-lg leading-relaxed text-zinc-600">
+                <p className="text-base md:text-lg leading-relaxed text-zinc-600">
                   Ever Efficient emerged from a vision to bridge the gap between traditional
                   business practices and the digital revolution. What began as a small
                   consulting firm has grown into a full service digital management agency,
@@ -184,30 +175,30 @@ export const AboutSection = (): JSX.Element => {
                 </p>
               </div>
               <div className="">
-                <div className="flex flex-col items-center justify-start gap-6 mx-auto md:flex-row max-w-7xl">
-                  <Button className="bg-[#275ba8] hover:bg-[#1e4a8c] rounded-[50px_50px_50px_0px] h-14 px-8 shadow-[0px_0px_40px_5px_#0000000d] transition-all duration-300">
-                    <span className="text-everefficientlkwhite text-sm tracking-[0.14px] leading-[25.2px]">
+                <div className="flex flex-col items-center justify-start gap-4 md:gap-6 sm:flex-row">
+                  <Button className="bg-[#275ba8] hover:bg-[#1e4a8c] rounded-[40px_40px_40px_0px] md:rounded-[50px_50px_50px_0px] h-12 md:h-14 px-6 md:px-8 shadow-[0px_0px_30px_5px_#0000000d] md:shadow-[0px_0px_40px_5px_#0000000d]">
+                    <span className="text-xs md:text-sm tracking-[0.14px] leading-[25.2px]">
                       Our Services
                     </span>
                     <img
-                      className="w-4 h-4 ml-2"
+                      className="w-3 h-3 md:w-4 md:h-4 ml-2"
                       alt="Arrow"
                       src="/component-1-37.svg"
                     />
                   </Button>
-                  <div className="flex items-center gap-4">
-                    <div className="flex items-center justify-center w-14 h-14 bg-everefficientlkblack rounded-full shadow-[-5px_5px_0px_#116e6317]">
+                  <div className="flex items-center gap-3 md:gap-4">
+                    <div className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 bg-everefficientlkblack rounded-full shadow-[-5px_5px_0px_#116e6317]">
                       <img
-                        className="w-6 h-6"
+                        className="w-5 h-5 md:w-6 md:h-6"
                         alt="Phone"
                         src="/component-1-63.svg"
                       />
                     </div>
                     <div>
-                      <div className="text-base font-medium text-everefficientlkcerulean-blue">
+                      <div className="text-sm md:text-base font-medium text-everefficientlkcerulean-blue">
                         Get Free Consultation
                       </div>
-                      <div className="text-lg font-semibold text-everefficientlkblack">
+                      <div className="text-base md:text-lg font-semibold text-everefficientlkblack">
                         +94 777 644 590
                       </div>
                     </div>
@@ -218,11 +209,14 @@ export const AboutSection = (): JSX.Element => {
           </div>
         </div>
       </section>
+      
       <Separator className="w-full h-px border-t border-[#757f95] opacity-25" />
       <Separator className="w-full h-px border-t border-[#757f95] opacity-25" />
       <DividerSection />
+      
+      {/* Features Section */}
       <section
-        className="relative py-12 px-6 md:px-12 text-center text-white min-h-[350px] bg-fixed"
+        className="relative py-8 sm:py-12 px-4 sm:px-6 md:px-12 text-center text-white min-h-[300px] sm:min-h-[350px] bg-fixed"
         style={{
           backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./aboutus_bg.jpg')`,
           backgroundSize: 'cover',
@@ -230,109 +224,110 @@ export const AboutSection = (): JSX.Element => {
           backgroundRepeat: 'no-repeat',
         }}
       >
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 max-w-7xl mx-auto">
           {features.map((item, idx) => (
             <div
               key={idx}
-              className="group transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:bg-white/5 p-4 rounded-xl"
+              className="group transition-all duration-500 hover:scale-[1.02] hover:shadow-xl hover:bg-white/5 p-3 sm:p-4 rounded-lg sm:rounded-xl"
             >
               <div
-                className="text-7xl mb-4 inline-block transform transition-all duration-500 
-                     group-hover:scale-125 
+                className="text-5xl sm:text-6xl md:text-7xl mb-3 sm:mb-4 inline-block transform transition-all duration-500 
+                     group-hover:scale-110 sm:group-hover:scale-125 
                      group-hover:rotate-6 
                      group-hover:text-yellow-300 
-                     group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.7)] 
+                     group-hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.7)] sm:group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.7)] 
                      group-hover:animate-bounce"
               >
                 {item.icon}
               </div>
-              <div className="text-5xl font-bold transition-all duration-300 group-hover:text-yellow-200">
+              <div className="text-3xl sm:text-4xl md:text-5xl font-bold transition-all duration-300 group-hover:text-yellow-200">
                 {item.number}
               </div>
-              <h3 className="mt-2 text-2xl font-semibold ">
+              <h3 className="mt-1 sm:mt-2 text-xl sm:text-2xl font-semibold">
                 {item.title}
               </h3>
-              <p className="mt-1 text-lg transition-all duration-300 opacity-90 group-hover:opacity-100 group-hover:tracking-wide">
+              <p className="mt-1 text-sm sm:text-base md:text-lg transition-all duration-300 opacity-90 group-hover:opacity-100 group-hover:tracking-wide">
                 {item.description}
               </p>
             </div>
           ))}
         </div>
       </section>
-      <section className="flex flex-col w-full items-center py-[30px] bg-everefficientlkprussian-blue-85 bg-[url(..//background.png)] bg-cover bg-center">
-        <div className="relative max-w-[1200px] w-full h-auto py-10">
-
-          <div className="flex flex-col items-center mb-10">
-            <div className="relative w-[245px] h-5 mb-6 border-b-2 border-[#275ba8]">
+      
+      {/* Testimonials Section */}
+      <section className="flex flex-col w-full items-center py-6 sm:py-[30px] bg-everefficientlkprussian-blue-85 bg-[url(..//background.png)] bg-cover bg-center">
+        <div className="relative max-w-[1200px] w-full h-auto py-6 sm:py-10 px-4 sm:px-6">
+          <div className="flex flex-col items-center mb-6 sm:mb-10">
+            <div className="relative w-[200px] sm:w-[245px] h-4 sm:h-5 mb-4 sm:mb-6 border-b-2 border-[#275ba8]">
               <img
-                className="absolute w-6 h-[21px] -top-1 left-0"
+                className="absolute w-5 h-4 sm:w-6 sm:h-[21px] -top-1 left-0"
                 alt="Component"
                 src="/component-1-16.svg"
               />
-              <div className="absolute w-[221px] h-[33px] -top-2.5 left-6 font-everefficient-lk-inter-bold-upper font-[number:var(--everefficient-lk-inter-bold-upper-font-weight)] text-everefficientlkcerulean-blue text-[length:var(--everefficient-lk-inter-bold-upper-font-size)] text-center tracking-[var(--everefficient-lk-inter-bold-upper-letter-spacing)] leading-[var(--everefficient-lk-inter-bold-upper-line-height)] whitespace-nowrap [font-style:var(--everefficient-lk-inter-bold-upper-font-style)]">
+              <div className="absolute w-[180px] sm:w-[221px] h-[28px] sm:h-[33px] -top-2 left-5 sm:left-6 text-everefficientlkcerulean-blue text-sm sm:text-base text-center tracking-widest whitespace-nowrap font-bold">
                 CLIENT SUCCESS
               </div>
             </div>
-            <h2 className="text-[50.2px] text-center font-['Inter',Helvetica] font-normal mb-6">
-              <span className="text-white leading-[55px]">What Our Clients </span>
-              <span className="text-[#275ba8] leading-[55px]">Say</span>
+            <h2 className="text-3xl sm:text-4xl md:text-[50px] text-center mb-4 sm:mb-6">
+              <span className="text-white">What Our Clients </span>
+              <span className="text-[#275ba8]">Say</span>
             </h2>
 
-            <p className="text-everefficientlkwhite text-[14.9px] text-center leading-[28.8px] max-w-[551px] font-['Inter',Helvetica] font-normal">
+            <p className="text-everefficientlkwhite text-sm sm:text-base text-center leading-relaxed max-w-[90%] sm:max-w-[551px]">
               Hear how we've helped businesses achieve digital transformation and
               growth.
             </p>
           </div>
-          <div className="flex justify-center gap-[22px] w-full py-1.5">
+          
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 w-full py-1.5 overflow-x-auto pb-4 sm:pb-0">
             {testimonials.map((testimonial) => (
               <Card
                 key={testimonial.id}
-                className="w-[274.5px] h-[280.98px] bg-everefficientlkwhite rounded-[40px_40px_40px_0px] border-b-[5px] border-[#275ba8] relative"
+                className="w-[250px] sm:w-[274.5px] h-auto sm:h-[280px] bg-everefficientlkwhite rounded-[30px_30px_30px_0px] sm:rounded-[40px_40px_40px_0px] border-b-[3px] sm:border-b-[5px] border-[#275ba8] relative mx-2 sm:mx-0"
               >
-                <CardContent className="p-0">
-
-                  <div className="flex mt-[29px] ml-[25px]">
+                <CardContent className="p-4 sm:p-0">
+                  <div className="flex mt-4 sm:mt-[29px] ml-4 sm:ml-[25px]">
                     {[1, 2, 3, 4, 5].map((star) => (
                       <img
                         key={star}
-                        className="w-[18px] h-4 mr-[4px]"
+                        className="w-4 h-3 sm:w-[18px] sm:h-4 mr-1 sm:mr-[4px]"
                         alt="Star rating"
                         src="/component-1.svg"
                       />
                     ))}
                   </div>
-                  <div className="w-56 h-[86px] mt-4 ml-[25px]">
-                    <div className="relative w-[220px] h-[87px]">
-                      <p className="text-everefficientlkslate-gray text-[14.8px] leading-[28.8px] font-everefficient-lk-inter-medium-italic font-[number:var(--everefficient-lk-inter-medium-italic-font-weight)] tracking-[var(--everefficient-lk-inter-medium-italic-letter-spacing)] [font-style:var(--everefficient-lk-inter-medium-italic-font-style)]">
+                  <div className="w-full sm:w-56 h-auto sm:h-[86px] mt-3 sm:mt-4 ml-4 sm:ml-[25px]">
+                    <div className="relative w-full sm:w-[220px] h-auto sm:h-[87px]">
+                      <p className="text-everefficientlkslate-gray text-xs sm:text-sm leading-relaxed italic">
                         {testimonial.quote}
                       </p>
                       <img
-                        className="absolute bottom-0 right-0 w-4 h-4"
+                        className="absolute bottom-0 right-0 w-3 h-3 sm:w-4 sm:h-4"
                         alt="More"
                         src="/component-1-18.svg"
                       />
                     </div>
                   </div>
-                  <div className="flex items-center mt-4 ml-[25px]">
-                    <div className="flex flex-col w-[75px] items-start p-1.5 rounded-[50px] border-2 border-dashed border-[#275ba8]">
+                  <div className="flex items-center mt-3 sm:mt-4 ml-4 sm:ml-[25px] pb-4 sm:pb-0">
+                    <div className="flex flex-col w-16 sm:w-[75px] items-start p-1 rounded-[50px] border-2 border-dashed border-[#275ba8]">
                       <div
-                        className="w-full h-[63px] rounded-[31.5px] bg-cover bg-center"
+                        className="w-14 h-14 sm:w-[63px] sm:h-[63px] rounded-full bg-cover bg-center"
                         style={{ backgroundImage: `url(${testimonial.image})` }}
                       />
                     </div>
-                    <div className="ml-[10px]">
-                      <h3 className="text-everefficientlkmirage text-[19.2px] font-normal font-['Inter',Helvetica]">
+                    <div className="ml-2 sm:ml-[10px]">
+                      <h3 className="text-everefficientlkmirage text-base sm:text-lg">
                         {testimonial.name}
                       </h3>
-                      <p className="text-everefficientlkcerulean-blue font-everefficient-lk-inter-medium font-[number:var(--everefficient-lk-inter-medium-font-weight)] text-[length:var(--everefficient-lk-inter-medium-font-size)] tracking-[var(--everefficient-lk-inter-medium-letter-spacing)] leading-[var(--everefficient-lk-inter-medium-line-height)] [font-style:var(--everefficient-lk-inter-medium-font-style)]">
+                      <p className="text-everefficientlkcerulean-blue text-sm sm:text-base">
                         {testimonial.role}
                       </p>
                     </div>
                   </div>
 
-                  <div className="absolute top-0 right-[30px] flex flex-col w-10 h-10 items-start pl-[6.88px] pr-[6.87px] pt-px pb-2 bg-everefficientlkcerulean-blue rounded-[50px_50px_50px_0px]">
+                  <div className="absolute top-2 sm:top-0 right-4 sm:right-[30px] flex flex-col w-8 h-8 sm:w-10 sm:h-10 items-center justify-center bg-everefficientlkcerulean-blue rounded-[30px_30px_30px_0px] sm:rounded-[50px_50px_50px_0px]">
                     <img
-                      className="w-[26.25px] h-[31px]"
+                      className="w-5 h-6 sm:w-[26px] sm:h-[31px]"
                       alt="Quote icon"
                       src="/component-1-21.svg"
                     />
