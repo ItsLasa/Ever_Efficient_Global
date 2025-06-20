@@ -68,7 +68,7 @@ const services = [
     ],
     ctaText: "View Our Portfolio",
     ctaLink: "#",
-    iconPrefix: "#",
+    iconPrefix: "/component-1-2-37.svg",
     image: "/social-media-content-creation.png",
     hasBg: true,
   },
@@ -178,45 +178,7 @@ const services = [
 
 export const ServicesSection = (): JSX.Element => {
   return (
-    <div className="relative w-full bg-everefficientlkwhite">
-      <motion.section
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="relative w-full h-[400px] bg-black overflow-hidden flex items-center justify-center"
-      >
-        <a href="#about" className="absolute inset-0 z-0 block">
-          {/* <div className=" flex w-full h-full">
-            <SpiderWeb />
-          </div> */}
-        </a>
-        <div className="relative z-10 text-center px-3 max-w-[1200px]">
-          <h1 className="text-everefficientlkwhite text-[32px] md:text-[40.25px] leading-[40px] md:leading-[45px] font-bold">
-            Services
-          </h1>
-          {/* <div className="mt-4 flex flex-wrap justify-center items-center gap-4 md:gap-[29.45px]">
-            <div className="flex items-center">
-              <a
-                className="text-sm text-everefficientlkwhite md:text-base"
-                href="https://everefficient.lk/index.html"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Home
-              </a>
-              <img
-                className="w-4 h-[20px] md:h-[28.8px] ml-2"
-                alt="Separator"
-                src="/component-1-2-8.svg"
-              />
-            </div>
-            <span className="text-sm text-everefficientlkcerulean-blue md:text-base">
-              Services
-            </span>
-          </div> */}
-        </div>
-      </motion.section>
-
+    <div className="relative w-full mt-16 bg-everefficientlkwhite">
       {/* Responsive Service Cards */}
       {services.map((service, index) => (
         <motion.div
@@ -247,7 +209,7 @@ export const ServicesSection = (): JSX.Element => {
                         className="w-5 h-5"
                       />
                     )}
-                    <span className="text-sm font-semibold uppercase tracking-[3px] text-everefficientlkcerulean-blue">
+                    <span className="text-lg font-semibold uppercase tracking-[3px] text-everefficientlkcerulean-blue">
                       {service.category}
                     </span>
                   </div>
@@ -260,7 +222,7 @@ export const ServicesSection = (): JSX.Element => {
                 </div>
 
                 {/* Description */}
-                <p className="text-[15px] md:text-[16.5px] leading-[26px] text-zinc-500 font-normal">
+                <p className="text-[15px] md:text-[16.5px] leading-[26px] text-zinc-00 font-normal">
                   {service.description}
                 </p>
 
