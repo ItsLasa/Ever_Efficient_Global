@@ -3,6 +3,12 @@ import { Card, CardContent } from "../../../../components/ui/card";
 import { motion } from "framer-motion"
 import { InfiniteSlider } from "../../../../components/ui/infinite-slider";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
 // Testimonial data for mapping
 const testimonials = [
   {
@@ -68,78 +74,79 @@ export const BackgroundSection = (): JSX.Element => {
         </div>
 
         {/* Testimonial cards */}
-        <div className="flex justify-center gap-[22px] w-full py-1.5">
-
-          {testimonials.map((testimonial) => (
-            <motion.div
-            initial={{ x: -100, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            viewport={{ once: true }}
+        <Swiper
+            modules={[Navigation, Pagination, Autoplay]}
+            spaceBetween={20}
+            slidesPerView={1}
+            breakpoints={{
+              640: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
+            navigation
+            pagination={{ clickable: true }}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+            loop={true}
+            className="w-full px-4 pb-8"
           >
-            <Card
-              key={testimonial.id}
-              className="w-[274.5px] h-[280.98px] bg-everefficientlkwhite rounded-[40px_40px_40px_0px] border-b-[5px] border-[#275ba8] relative"
-            >
-              <CardContent className="p-0">
-                {/* Star rating */}
-                <div className="flex mt-[29px] ml-[25px]">
-                  {[1, 2, 3, 4, 5].map((star) => (
-                    <img
-                      key={star}
-                      className="w-[18px] h-4 mr-[4px]"
-                      alt="Star rating"
-                      src="/component-1.svg"
-                    />
-                  ))}
-                </div>
-          
-                {/* Testimonial text */}
-                <div className="w-56 h-[86px] mt-4 ml-[25px]">
-                  <div className="relative w-[220px] h-[87px]">
-                    <p className="text-everefficientlkslate-gray text-[14.8px] leading-[28.8px] font-everefficient-lk-inter-medium-italic font-[number:var(--everefficient-lk-inter-medium-italic-font-weight)] tracking-[var(--everefficient-lk-inter-medium-italic-letter-spacing)] [font-style:var(--everefficient-lk-inter-medium-italic-font-style)]">
-                      {testimonial.quote}
-                    </p>
-                    <img
-                      className="absolute bottom-0 right-0 w-4 h-4"
-                      alt="More"
-                      src="/component-1-18.svg"
-                    />
-                  </div>
-                </div>
-          
-                {/* Profile section */}
-                <div className="flex items-center mt-4 ml-[25px]">
-                  <div className="flex flex-col w-[75px] items-start p-1.5 rounded-[50px] border-2 border-dashed border-[#275ba8]">
-                    <div
-                      className="w-full h-[63px] rounded-[31.5px] bg-cover bg-center"
-                      style={{ backgroundImage: `url(${testimonial.image})` }}
-                    />
-                  </div>
-                  <div className="ml-[10px]">
-                    <h3 className="text-everefficientlkmirage text-[19.2px] font-normal font-['Inter',Helvetica]">
-                      {testimonial.name}
-                    </h3>
-                    <p className="text-everefficientlkcerulean-blue font-everefficient-lk-inter-medium font-[number:var(--everefficient-lk-inter-medium-font-weight)] text-[length:var(--everefficient-lk-inter-medium-font-size)] tracking-[var(--everefficient-lk-inter-medium-letter-spacing)] leading-[var(--everefficient-lk-inter-medium-line-height)] [font-style:var(--everefficient-lk-inter-medium-font-style)]">
-                      {testimonial.role}
-                    </p>
-                  </div>
-                </div>
-          
-                {/* Quote icon */}
-                <div className="absolute top-0 right-[30px] flex flex-col w-10 h-10 items-start pl-[6.88px] pr-[6.87px] pt-px pb-2 bg-everefficientlkcerulean-blue rounded-[50px_50px_50px_0px]">
-                  <img
-                    className="w-[26.25px] h-[31px]"
-                    alt="Quote icon"
-                    src="/component-1-21.svg"
-                  />
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
-          ))}
-              
-        </div>
+            {testimonials.map((testimonial) => (
+              <SwiperSlide key={testimonial.id}>
+                <Card className="w-[250px] sm:w-[274.5px] h-auto sm:h-[280px] bg-everefficientlkwhite rounded-[30px_30px_30px_0px] sm:rounded-[40px_40px_40px_0px] border-b-[3px] sm:border-b-[5px] border-[#275ba8] relative mx-auto">
+                  <CardContent className="p-4 sm:p-0">
+                    <div className="flex mt-4 sm:mt-[29px] ml-4 sm:ml-[25px]">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <img
+                          key={star}
+                          className="w-4 h-3 sm:w-[18px] sm:h-4 mr-1 sm:mr-[4px]"
+                          alt="Star rating"
+                          src="/component-1.svg"
+                        />
+                      ))}
+                    </div>
+                    <div className="w-full sm:w-56 h-auto sm:h-[86px] mt-3 sm:mt-4 ml-4 sm:ml-[25px]">
+                      <div className="relative w-full sm:w-[220px] h-auto sm:h-[87px]">
+                        <p className="text-everefficientlkslate-gray text-xs sm:text-sm leading-relaxed italic">
+                          {testimonial.quote}
+                        </p>
+                        <img
+                          className="absolute bottom-0 right-0 w-3 h-3 sm:w-4 sm:h-4"
+                          alt="More"
+                          src="/component-1-18.svg"
+                        />
+                      </div>
+                    </div>
+                    <div className="flex items-center mt-3 sm:mt-4 ml-4 sm:ml-[25px] pb-4 sm:pb-0">
+                      <div className="flex flex-col w-16 sm:w-[75px] items-start p-1 rounded-[50px] border-2 border-dashed border-[#275ba8]">
+                        <div
+                          className="w-14 h-14 sm:w-[63px] sm:h-[63px] rounded-full bg-cover bg-center"
+                          style={{
+                            backgroundImage: `url(${testimonial.image})`,
+                          }}
+                        />
+                      </div>
+                      <div className="ml-2 sm:ml-[10px]">
+                        <h3 className="text-everefficientlkmirage text-base sm:text-lg">
+                          {testimonial.name}
+                        </h3>
+                        <p className="text-everefficientlkcerulean-blue text-sm sm:text-base">
+                          {testimonial.role}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="absolute top-2 sm:top-0 right-4 sm:right-[30px] flex flex-col w-8 h-8 sm:w-10 sm:h-10 items-center justify-center bg-everefficientlkcerulean-blue rounded-[30px_30px_30px_0px] sm:rounded-[50px_50px_50px_0px]">
+                      <img
+                        className="w-5 h-6 sm:w-[26px] sm:h-[31px]"
+                        alt="Quote icon"
+                        src="/component-1-21.svg"
+                      />
+                    </div>
+                  </CardContent>
+                </Card>
+              </SwiperSlide>
+            ))}
+          </Swiper>
   
       </div>
    
