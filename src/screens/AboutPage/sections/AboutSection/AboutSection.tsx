@@ -1,34 +1,43 @@
-import { Card, CardContent } from '../../../../components/ui/card';
-import { Button } from '../../../../components/ui/button';
-import { DividerSection } from '../../../ElementLight/sections/DividerSection';
-import { Separator } from '@radix-ui/react-separator';
-import SpiderWeb from '../../../../components/ui/SpiderWeb';
+import { Card, CardContent } from "../../../../components/ui/card";
+import { Button } from "../../../../components/ui/button";
+import { DividerSection } from "../../../ElementLight/sections/DividerSection";
+import { Separator } from "@radix-ui/react-separator";
+import SpiderWeb from "../../../../components/ui/SpiderWeb";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 export const AboutSection = (): JSX.Element => {
   const features = [
     {
-      icon: '🛡️',
-      number: '1',
-      title: 'Integrity',
-      description: 'We maintain the highest standards of honesty and transparency in all our dealings.',
+      icon: "🛡️",
+      number: "1",
+      title: "Integrity",
+      description:
+        "We maintain the highest standards of honesty and transparency in all our dealings.",
     },
     {
-      icon: '💡',
-      number: '2',
-      title: 'Innovation',
-      description: 'We constantly evolve and adapt to bring the latest solutions to our clients.',
+      icon: "💡",
+      number: "2",
+      title: "Innovation",
+      description:
+        "We constantly evolve and adapt to bring the latest solutions to our clients.",
     },
     {
-      icon: '🫱🏻‍🫲🏽',
-      number: '3',
-      title: 'Collaboration',
-      description: 'We believe in working together to achieve exceptional results.',
+      icon: "🫱🏻‍🫲🏽",
+      number: "3",
+      title: "Collaboration",
+      description:
+        "We believe in working together to achieve exceptional results.",
     },
     {
-      icon: '📈',
-      number: '4',
-      title: 'Excellence',
-      description: 'We strive for excellence in everything we do.',
+      icon: "📈",
+      number: "4",
+      title: "Excellence",
+      description: "We strive for excellence in everything we do.",
     },
   ];
 
@@ -37,28 +46,32 @@ export const AboutSection = (): JSX.Element => {
       id: 1,
       name: "Kumara Sahan",
       role: "Business Owner",
-      quote: "\"What sets Ever Efficient apart is their strategic approach. They don't just execute tasks",
+      quote:
+        "\"What sets Ever Efficient apart is their strategic approach. They don't just execute tasks",
       image: "/kumara-sahan.png",
     },
     {
       id: 2,
       name: "Rajiv Fernando",
       role: "Business Owner",
-      quote: '"Ever Efficient transformed our online presence completely. Our website traffic increased',
+      quote:
+        '"Ever Efficient transformed our online presence completely. Our website traffic increased',
       image: "/rajiv-fernando.png",
     },
     {
       id: 3,
       name: "Priyanka De Silva",
       role: "Business Owner",
-      quote: '"Their social media strategy took our engagement from 200 to 15,000+ followers in one',
+      quote:
+        '"Their social media strategy took our engagement from 200 to 15,000+ followers in one',
       image: "/priyanka-de-silva.png",
     },
     {
       id: 4,
       name: "Dinesh Perera",
       role: "Business Owner",
-      quote: '"The professional photography and video content they created became the cornerstone of o',
+      quote:
+        '"The professional photography and video content they created became the cornerstone of o',
       image: "/dinesh-perera.png",
     },
   ];
@@ -98,7 +111,7 @@ export const AboutSection = (): JSX.Element => {
           </div>
         </div>
       </section>
-      
+
       {/* Our Story Section */}
       <section className="py-12 md:py-16 lg:py-20 bg-white">
         <div className="container px-4 mx-auto">
@@ -108,16 +121,23 @@ export const AboutSection = (): JSX.Element => {
               <div className="grid grid-cols-2 gap-4 md:gap-6">
                 <div
                   className="h-64 sm:h-80 md:h-96 rounded-[50px_50px_0px_50px] md:rounded-[80px_80px_0px_80px] bg-cover bg-center"
-                  style={{ backgroundImage: "url(/digital-strategy-team-meeting.png)" }}
+                  style={{
+                    backgroundImage: "url(/digital-strategy-team-meeting.png)",
+                  }}
                 />
                 <div className="space-y-4 md:space-y-6">
                   <div
                     className="h-32 sm:h-40 md:h-44 rounded-full border-2 border-dashed border-[#275ba8] bg-cover bg-center"
-                    style={{ backgroundImage: "url(/presenting-digital-solutions-to-clients.png)" }}
+                    style={{
+                      backgroundImage:
+                        "url(/presenting-digital-solutions-to-clients.png)",
+                    }}
                   />
                   <div
                     className="h-32 sm:h-40 md:h-44 rounded-[0px_50px_50px_50px] md:rounded-[0px_80px_80px_80px] bg-cover bg-center"
-                    style={{ backgroundImage: "url(/our-team-analyzing-data.png)" }}
+                    style={{
+                      backgroundImage: "url(/our-team-analyzing-data.png)",
+                    }}
                   />
                 </div>
               </div>
@@ -130,13 +150,17 @@ export const AboutSection = (): JSX.Element => {
                     />
                   </div>
                   <div className="text-everefficientlkwhite">
-                    <div className="text-base md:text-lg font-bold">9+ Years Of</div>
-                    <div className="text-base md:text-lg font-bold">Digital Excellence</div>
+                    <div className="text-base md:text-lg font-bold">
+                      9+ Years Of
+                    </div>
+                    <div className="text-base md:text-lg font-bold">
+                      Digital Excellence
+                    </div>
                   </div>
                 </CardContent>
               </Card>
             </div>
-            
+
             {/* Content Column */}
             <div className="space-y-6 md:space-y-8">
               <div className="space-y-3 md:space-y-4">
@@ -154,7 +178,9 @@ export const AboutSection = (): JSX.Element => {
               </div>
               <div>
                 <h2 className="mb-4 md:mb-6 text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-bold leading-tight">
-                  <span className="text-everefficientlkmirage">Pioneering </span>
+                  <span className="text-everefficientlkmirage">
+                    Pioneering{" "}
+                  </span>
                   <span className="text-everefficientlkcerulean-blue">
                     Digital
                     <br />
@@ -168,10 +194,11 @@ export const AboutSection = (): JSX.Element => {
                   </span>
                 </h2>
                 <p className="text-base md:text-lg leading-relaxed text-zinc-600">
-                  Ever Efficient emerged from a vision to bridge the gap between traditional
-                  business practices and the digital revolution. What began as a small
-                  consulting firm has grown into a full service digital management agency,
-                  helping hundreds of businesses achieve measurable success.
+                  Ever Efficient emerged from a vision to bridge the gap between
+                  traditional business practices and the digital revolution.
+                  What began as a small consulting firm has grown into a full
+                  service digital management agency, helping hundreds of
+                  businesses achieve measurable success.
                 </p>
               </div>
               <div className="">
@@ -209,19 +236,19 @@ export const AboutSection = (): JSX.Element => {
           </div>
         </div>
       </section>
-      
+
       <Separator className="w-full h-px border-t border-[#757f95] opacity-25" />
       <Separator className="w-full h-px border-t border-[#757f95] opacity-25" />
       <DividerSection />
-      
+
       {/* Features Section */}
       <section
         className="relative py-8 sm:py-12 px-4 sm:px-6 md:px-12 text-center text-white min-h-[300px] sm:min-h-[350px] bg-fixed"
         style={{
           backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./aboutus_bg.jpg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
         }}
       >
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 max-w-7xl mx-auto">
@@ -253,7 +280,7 @@ export const AboutSection = (): JSX.Element => {
           ))}
         </div>
       </section>
-      
+
       {/* Testimonials Section */}
       <section className="flex flex-col w-full items-center py-6 sm:py-[30px] bg-everefficientlkprussian-blue-85 bg-[url(..//background.png)] bg-cover bg-center">
         <div className="relative max-w-[1200px] w-full h-auto py-6 sm:py-10 px-4 sm:px-6">
@@ -274,68 +301,84 @@ export const AboutSection = (): JSX.Element => {
             </h2>
 
             <p className="text-everefficientlkwhite text-sm sm:text-base text-center leading-relaxed max-w-[90%] sm:max-w-[551px]">
-              Hear how we've helped businesses achieve digital transformation and
-              growth.
+              Hear how we've helped businesses achieve digital transformation
+              and growth.
             </p>
           </div>
-          
-          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 w-full py-1.5 overflow-x-auto pb-4 sm:pb-0">
-            {testimonials.map((testimonial) => (
-              <Card
-                key={testimonial.id}
-                className="w-[250px] sm:w-[274.5px] h-auto sm:h-[280px] bg-everefficientlkwhite rounded-[30px_30px_30px_0px] sm:rounded-[40px_40px_40px_0px] border-b-[3px] sm:border-b-[5px] border-[#275ba8] relative mx-2 sm:mx-0"
-              >
-                <CardContent className="p-4 sm:p-0">
-                  <div className="flex mt-4 sm:mt-[29px] ml-4 sm:ml-[25px]">
-                    {[1, 2, 3, 4, 5].map((star) => (
-                      <img
-                        key={star}
-                        className="w-4 h-3 sm:w-[18px] sm:h-4 mr-1 sm:mr-[4px]"
-                        alt="Star rating"
-                        src="/component-1.svg"
-                      />
-                    ))}
-                  </div>
-                  <div className="w-full sm:w-56 h-auto sm:h-[86px] mt-3 sm:mt-4 ml-4 sm:ml-[25px]">
-                    <div className="relative w-full sm:w-[220px] h-auto sm:h-[87px]">
-                      <p className="text-everefficientlkslate-gray text-xs sm:text-sm leading-relaxed italic">
-                        {testimonial.quote}
-                      </p>
-                      <img
-                        className="absolute bottom-0 right-0 w-3 h-3 sm:w-4 sm:h-4"
-                        alt="More"
-                        src="/component-1-18.svg"
-                      />
-                    </div>
-                  </div>
-                  <div className="flex items-center mt-3 sm:mt-4 ml-4 sm:ml-[25px] pb-4 sm:pb-0">
-                    <div className="flex flex-col w-16 sm:w-[75px] items-start p-1 rounded-[50px] border-2 border-dashed border-[#275ba8]">
-                      <div
-                        className="w-14 h-14 sm:w-[63px] sm:h-[63px] rounded-full bg-cover bg-center"
-                        style={{ backgroundImage: `url(${testimonial.image})` }}
-                      />
-                    </div>
-                    <div className="ml-2 sm:ml-[10px]">
-                      <h3 className="text-everefficientlkmirage text-base sm:text-lg">
-                        {testimonial.name}
-                      </h3>
-                      <p className="text-everefficientlkcerulean-blue text-sm sm:text-base">
-                        {testimonial.role}
-                      </p>
-                    </div>
-                  </div>
 
-                  <div className="absolute top-2 sm:top-0 right-4 sm:right-[30px] flex flex-col w-8 h-8 sm:w-10 sm:h-10 items-center justify-center bg-everefficientlkcerulean-blue rounded-[30px_30px_30px_0px] sm:rounded-[50px_50px_50px_0px]">
-                    <img
-                      className="w-5 h-6 sm:w-[26px] sm:h-[31px]"
-                      alt="Quote icon"
-                      src="/component-1-21.svg"
-                    />
-                  </div>
-                </CardContent>
-              </Card>
+          <Swiper
+            modules={[Navigation, Pagination, Autoplay]}
+            spaceBetween={20}
+            slidesPerView={1}
+            breakpoints={{
+              640: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
+            navigation
+            pagination={{ clickable: true }}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+            loop={true}
+            className="w-full px-4 pb-8"
+          >
+            {testimonials.map((testimonial) => (
+              <SwiperSlide key={testimonial.id}>
+                <Card className="w-[250px] sm:w-[274.5px] h-auto sm:h-[280px] bg-everefficientlkwhite rounded-[30px_30px_30px_0px] sm:rounded-[40px_40px_40px_0px] border-b-[3px] sm:border-b-[5px] border-[#275ba8] relative mx-auto">
+                  <CardContent className="p-4 sm:p-0">
+                    <div className="flex mt-4 sm:mt-[29px] ml-4 sm:ml-[25px]">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <img
+                          key={star}
+                          className="w-4 h-3 sm:w-[18px] sm:h-4 mr-1 sm:mr-[4px]"
+                          alt="Star rating"
+                          src="/component-1.svg"
+                        />
+                      ))}
+                    </div>
+                    <div className="w-full sm:w-56 h-auto sm:h-[86px] mt-3 sm:mt-4 ml-4 sm:ml-[25px]">
+                      <div className="relative w-full sm:w-[220px] h-auto sm:h-[87px]">
+                        <p className="text-everefficientlkslate-gray text-xs sm:text-sm leading-relaxed italic">
+                          {testimonial.quote}
+                        </p>
+                        <img
+                          className="absolute bottom-0 right-0 w-3 h-3 sm:w-4 sm:h-4"
+                          alt="More"
+                          src="/component-1-18.svg"
+                        />
+                      </div>
+                    </div>
+                    <div className="flex items-center mt-3 sm:mt-4 ml-4 sm:ml-[25px] pb-4 sm:pb-0">
+                      <div className="flex flex-col w-16 sm:w-[75px] items-start p-1 rounded-[50px] border-2 border-dashed border-[#275ba8]">
+                        <div
+                          className="w-14 h-14 sm:w-[63px] sm:h-[63px] rounded-full bg-cover bg-center"
+                          style={{
+                            backgroundImage: `url(${testimonial.image})`,
+                          }}
+                        />
+                      </div>
+                      <div className="ml-2 sm:ml-[10px]">
+                        <h3 className="text-everefficientlkmirage text-base sm:text-lg">
+                          {testimonial.name}
+                        </h3>
+                        <p className="text-everefficientlkcerulean-blue text-sm sm:text-base">
+                          {testimonial.role}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="absolute top-2 sm:top-0 right-4 sm:right-[30px] flex flex-col w-8 h-8 sm:w-10 sm:h-10 items-center justify-center bg-everefficientlkcerulean-blue rounded-[30px_30px_30px_0px] sm:rounded-[50px_50px_50px_0px]">
+                      <img
+                        className="w-5 h-6 sm:w-[26px] sm:h-[31px]"
+                        alt="Quote icon"
+                        src="/component-1-21.svg"
+                      />
+                    </div>
+                  </CardContent>
+                </Card>
+              </SwiperSlide>
             ))}
-          </div>
+          </Swiper>
         </div>
       </section>
     </div>
