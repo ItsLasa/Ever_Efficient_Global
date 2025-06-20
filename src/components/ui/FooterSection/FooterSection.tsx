@@ -76,7 +76,7 @@ export const FooterSection = (): JSX.Element => {
         </div>
   
         {/* Quick Links Section */}
-        <div>
+        <div className="lg:ml-28">
           <h3 className="mb-4 text-lg font-semibold text-everefficientlkwhite">
             Quick Links
           </h3>
@@ -102,11 +102,12 @@ export const FooterSection = (): JSX.Element => {
           <p className="mb-4 text-sm text-everefficientlkwhite">
             Subscribe to our newsletter to get the latest updates and news.
           </p>
-          <Card className="mb-4 overflow-hidden bg-white rounded-xl">
-            <CardContent className="p-4 text-sm text-everefficientlkshark-75">
-              Your Email
-            </CardContent>
-          </Card>
+          <input
+    type="email"
+    placeholder="Your Email"
+    className="w-full mb-4 px-4 py-3 text-sm text-everefficientlkshark-75 bg-white rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#275ba8]"
+  />
+
           <Button className="w-full md:w-auto h-[53px] bg-[#275ba8] hover:bg-[#1e4a8a] rounded-[50px_50px_50px_0px] shadow-lg text-sm text-white tracking-wide">
             SUBSCRIBE NOW
             <ChevronRightIcon className="w-4 h-4 ml-2" />
