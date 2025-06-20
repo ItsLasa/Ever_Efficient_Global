@@ -38,7 +38,7 @@ const serviceCards = [
       text: "Engagement",
       icon: "/component-1-3.svg",
     },
-    pricing: "From LKR 25,000",
+    pricing: "Custom Packages",
   },
   {
     id: 3,
