@@ -7,6 +7,7 @@ import {
   NavigationMenuList,
 } from "../navigation-menu";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const navigationLinks = [
   { text: "Home", url: "/" },
@@ -43,9 +44,10 @@ export const HeaderSection = (): JSX.Element => {
       <div className="container px-4 py-4 mx-auto">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="/" className="flex items-center">
-            <div className="w-52 h-12 bg-[url(/ever-efficient-logo.png)] bg-contain bg-no-repeat bg-left" />
-          </a>
+          <Link to="/">
+          <div className="w-[210px] h-[60px] bg-[url('/newLogo.png')] bg-cover bg-no-repeat bg-left" />
+
+          </Link>
 
           {/* Desktop Navigation */}
           <NavigationMenu className="hidden md:flex">
