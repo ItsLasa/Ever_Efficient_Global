@@ -327,40 +327,52 @@ export const ElementLight = (): JSX.Element => {
 
       {/* Media Section */}
       <section className="py-12 md:py-16 bg-white">
-        <div className="container px-4 mx-auto">
-          <div className="grid items-center grid-cols-1 gap-6 mx-auto lg:grid-cols-2 max-w-7xl">
-            {/* Full Image - No Cropping */}
-            <div className="h-64 md:h-[324px] lg:h-[576px] w-full flex items-center justify-center rounded-xl md:rounded-2xl overflow-hidden">
-              <img
-                src="/addv-jpg.png"
-                alt="Advertisement"
-                className="object-contain w-auto h-full"
-              />
-            </div>
+      <div className="container px-4 mx-auto">
+        <div className="grid items-center grid-cols-1 gap-6 mx-auto lg:grid-cols-2 max-w-7xl">
+          {/* Image with Motion */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="h-64 md:h-[324px] lg:h-[576px] w-full flex items-center justify-center rounded-xl md:rounded-2xl overflow-hidden"
+          >
+            <img
+              src="/addv-jpg.png"
+              alt="Advertisement"
+              className="object-contain w-auto h-full"
+            />
+          </motion.div>
 
-            {/* Autoplay Video with Mute/Unmute */}
-            <div className="h-64 md:h-[324px] lg:h-[576px] w-full relative rounded-xl md:rounded-2xl overflow-hidden">
-              <video
-                ref={videoRef}
-                className="w-full h-full object-cover"
-                src="/addv-video.mp4"
-                autoPlay
-                loop
-                muted={isMuted}
-                playsInline
-              />
-              <Button
-                onClick={toggleMute}
-                className="absolute bottom-4 right-4 md:bottom-6 md:right-6 bg-[#275ba8] hover:bg-[#1e4a8c] rounded-[40px_40px_40px_0px] md:rounded-[50px_50px_50px_0px] shadow-[0px_0px_30px_5px_#0000000d] md:shadow-[0px_0px_40px_5px_#0000000d] px-4 py-2 md:px-6 md:py-3"
-              >
-                <span className="text-xs md:text-sm font-semibold text-everefficientlkwhite">
-                  {isMuted ? "🔇 UNMUTE" : "🔊 MUTE"}
-                </span>
-              </Button>
-            </div>
-          </div>
+          {/* Video with Motion */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+            viewport={{ once: true }}
+            className="h-64 md:h-[324px] lg:h-[576px] w-full relative rounded-xl md:rounded-2xl overflow-hidden"
+          >
+            <video
+              ref={videoRef}
+              className="w-full h-full object-cover"
+              src="/addv-video.mp4"
+              autoPlay
+              loop
+              muted={isMuted}
+              playsInline
+            />
+            <Button
+              onClick={toggleMute}
+              className="absolute bottom-4 right-4 md:bottom-6 md:right-6 bg-[#275ba8] hover:bg-[#1e4a8c] rounded-[40px_40px_40px_0px] md:rounded-[50px_50px_50px_0px] shadow-[0px_0px_30px_5px_#0000000d] md:shadow-[0px_0px_40px_5px_#0000000d] px-4 py-2 md:px-6 md:py-3"
+            >
+              <span className="text-xs md:text-sm font-semibold text-everefficientlkwhite">
+                {isMuted ? "🔇 UNMUTE" : "🔊 MUTE"}
+              </span>
+            </Button>
+          </motion.div>
         </div>
-      </section>
+      </div>
+    </section>
       
       <Separator className="w-full h-px border-t border-[#757f95] opacity-25" />
 
